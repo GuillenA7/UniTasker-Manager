@@ -23,6 +23,7 @@ public class frmMenu extends javax.swing.JFrame
         jMenu1 = new javax.swing.JMenu();
         jlbWelcome = new javax.swing.JLabel();
         jlbUser = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         menuBarraNavegacion = new javax.swing.JMenuBar();
         menuAlumnos = new javax.swing.JMenu();
         addAlumnos = new javax.swing.JMenuItem();
@@ -43,6 +44,8 @@ public class frmMenu extends javax.swing.JFrame
         jlbWelcome.setText("Bienvenido");
 
         jlbUser.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+
+        jLabel1.setText(":)");
 
         menuAlumnos.setText("Proyectos");
 
@@ -113,21 +116,28 @@ public class frmMenu extends javax.swing.JFrame
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(143, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(99, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jlbUser, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jlbWelcome))
-                .addGap(139, 139, 139))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jlbUser, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
+                        .addGap(197, 197, 197))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jlbWelcome)
+                        .addGap(139, 139, 139))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(104, 104, 104)
+                .addGap(115, 115, 115)
                 .addComponent(jlbWelcome)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jlbUser, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         pack();
@@ -207,6 +217,7 @@ public class frmMenu extends javax.swing.JFrame
     private javax.swing.JMenuItem addAlumnos;
     private javax.swing.JMenuItem addLibro;
     private javax.swing.JMenuItem addPrestamo;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JLabel jlbUser;
