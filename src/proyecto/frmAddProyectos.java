@@ -2,14 +2,14 @@ package proyecto;
 
 import java.awt.event.KeyEvent;
 
-public class frmAddAlumnos extends javax.swing.JFrame
+public class frmAddProyectos extends javax.swing.JFrame
 {
 
     private frmMenu menu;
-    Alumnos alumnosP = new Alumnos();
+    Proyectos alumnosP = new Proyectos();
     
     
-    public frmAddAlumnos(frmMenu menu, Alumnos alumnosP)
+    public frmAddProyectos(frmMenu menu, Proyectos alumnosP)
     {
         initComponents();
         this.menu = menu;
@@ -42,7 +42,7 @@ public class frmAddAlumnos extends javax.swing.JFrame
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jlbAlumnos.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jlbAlumnos.setText("Alumnos");
+        jlbAlumnos.setText("Proyecto");
 
         jlbAdd.setText("Registro");
 
@@ -276,14 +276,15 @@ public class frmAddAlumnos extends javax.swing.JFrame
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmAddAlumnos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmAddProyectos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmAddAlumnos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmAddProyectos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmAddAlumnos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmAddProyectos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmAddAlumnos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmAddProyectos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
@@ -291,7 +292,7 @@ public class frmAddAlumnos extends javax.swing.JFrame
         {
             public void run()
             {
-                // new frmAddAlumnos().setVisible(true);
+                // new frmAddProyectos().setVisible(true);
             }
         });
     }

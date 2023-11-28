@@ -2,7 +2,7 @@ package proyecto;
 
 public class Usuario
 {
-    private String cuenta;
+    private String nombre;
     private String contrasena;
 
     public Usuario()
@@ -12,18 +12,18 @@ public class Usuario
 
     public Usuario(String cuenta, String contrasena)
     {
-        this.cuenta = cuenta;
+        this.nombre = cuenta;
         this.contrasena = contrasena;
     }
 
-    public String getCuenta()
+    public String getNombre()
     {
-        return cuenta;
+        return nombre;
     }
 
-    public void setCuenta(String cuenta)
+    public void setNombre(String nombre)
     {
-        this.cuenta = cuenta;
+        this.nombre = nombre;
     }
 
     public String getContrasena()

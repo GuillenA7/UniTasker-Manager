@@ -1,15 +1,15 @@
 package proyecto;
 
-public class Alumnos
+public class Proyectos
 {
     private String name;
     private String lastname;
     private char genre;
     private int reg;
     private boolean status;
-    private Alumnos next;
+    private Proyectos next;
 
-    public Alumnos(String name, String lastname, char genre, int reg, boolean status)
+    public Proyectos(String name, String lastname, char genre, int reg, boolean status)
     {
         this.name = name;
         this.lastname = lastname;
@@ -19,7 +19,7 @@ public class Alumnos
         this.next = null;
     }
 
-    public Alumnos()
+    public Proyectos()
     {
         
     }
@@ -74,25 +74,25 @@ public class Alumnos
         this.status = status;
     }
 
-    public Alumnos getNext()
+    public Proyectos getNext()
     {
         return next;
     }
 
-    public void setNext(Alumnos next)
+    public void setNext(Proyectos next)
     {
         this.next = next;
     }
     
     public void push (String name, String lastname, char genre, int reg, boolean status)
     {
-        Alumnos node = new Alumnos(name, lastname, genre, reg, status);
+        Proyectos node = new Proyectos(name, lastname, genre, reg, status);
         
         if(next == null)
             next = node;
         else
         {
-            Alumnos aux = next;
+            Proyectos aux = next;
             next = node;
             node.setNext(aux);
         }
@@ -100,7 +100,7 @@ public class Alumnos
     
     public String traverseStack()
     {
-        Alumnos aux = next;
+        Proyectos aux = next;
         String text = "";
         
         if(next == null)
@@ -126,7 +126,7 @@ public class Alumnos
     
     public void pop()
     {
-        Alumnos aux = next;
+        Proyectos aux = next;
         
         if(next == null)
             System.out.println("La PILA de ALUMNOS está vacía.");

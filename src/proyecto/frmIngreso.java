@@ -37,6 +37,7 @@ public class frmIngreso extends javax.swing.JFrame
         jbnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Log In");
 
         jlbTitulo.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jlbTitulo.setText("Inicio de sesión");
@@ -48,6 +49,7 @@ public class frmIngreso extends javax.swing.JFrame
         jlbContrasena.setText("Contraseña:");
 
         jpfContrasena.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jpfContrasena.setMinimumSize(new java.awt.Dimension(64, 22));
         jpfContrasena.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jpfContrasenaKeyTyped(evt);
@@ -55,11 +57,14 @@ public class frmIngreso extends javax.swing.JFrame
         });
 
         jtfUsuario.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jtfUsuario.setMinimumSize(new java.awt.Dimension(64, 22));
 
         jlbMensaje.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jlbMensaje.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jbnIngresar.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jbnIngresar.setText("Ingresar");
+        jbnIngresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jbnIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbnIngresarActionPerformed(evt);
@@ -68,6 +73,7 @@ public class frmIngreso extends javax.swing.JFrame
 
         jbnSalir.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jbnSalir.setText("Salir");
+        jbnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jbnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbnSalirActionPerformed(evt);
@@ -79,29 +85,34 @@ public class frmIngreso extends javax.swing.JFrame
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jlbContrasena)
-                            .addComponent(jlbUsuario))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtfUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jpfContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jlbUsuario)
+                        .addGap(39, 39, 39)
+                        .addComponent(jtfUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jbnIngresar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jbnSalir))
-                            .addComponent(jlbMensaje, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(27, Short.MAX_VALUE))
+                                .addGap(43, 43, 43)
+                                .addComponent(jlbTitulo))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jlbContrasena)
+                                .addGap(18, 18, 18)
+                                .addComponent(jpfContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jlbTitulo)
-                .addGap(54, 54, 54))
+                .addComponent(jbnIngresar)
+                .addGap(38, 38, 38)
+                .addComponent(jbnSalir)
+                .addGap(32, 32, 32))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jlbMensaje, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,19 +124,20 @@ public class frmIngreso extends javax.swing.JFrame
                     .addComponent(jlbUsuario)
                     .addComponent(jtfUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlbContrasena)
-                    .addComponent(jpfContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jpfContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jlbMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jbnSalir)
-                    .addComponent(jbnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbnIngresar)
+                    .addComponent(jbnSalir))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbnIngresarActionPerformed
@@ -139,7 +151,7 @@ public class frmIngreso extends javax.swing.JFrame
         // validar el acceso o no
         for(int i = 0; i < count; i++)
         {
-            if (aUsuarios[i].getCuenta().equals(usr) && aUsuarios[i].getContrasena().equals(ctr))
+            if (aUsuarios[i].getNombre().equals(usr) && aUsuarios[i].getContrasena().equals(ctr))
             {
                 jlbMensaje.setText("Ingresa al sistema");
                 frmMenu f = new frmMenu(usr, this);

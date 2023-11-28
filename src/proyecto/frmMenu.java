@@ -4,7 +4,7 @@ public class frmMenu extends javax.swing.JFrame
 {
 
     private frmIngreso ingreso;
-    Alumnos alumnosP = new Alumnos();
+    Proyectos alumnosP = new Proyectos();
     Libro libroP = new Libro();
     Prestamo prestamoP = new Prestamo();
     
@@ -23,7 +23,6 @@ public class frmMenu extends javax.swing.JFrame
         jMenu1 = new javax.swing.JMenu();
         jlbWelcome = new javax.swing.JLabel();
         jlbUser = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         menuBarraNavegacion = new javax.swing.JMenuBar();
         menuAlumnos = new javax.swing.JMenu();
         addAlumnos = new javax.swing.JMenuItem();
@@ -43,9 +42,7 @@ public class frmMenu extends javax.swing.JFrame
         jlbWelcome.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jlbWelcome.setText("Bienvenido");
 
-        jlbUser.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-
-        jLabel1.setText(":)");
+        jlbUser.setText(":)");
 
         menuAlumnos.setText("Proyectos");
 
@@ -116,41 +113,36 @@ public class frmMenu extends javax.swing.JFrame
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(99, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(454, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jlbUser, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addGap(197, 197, 197))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jlbWelcome)
-                        .addGap(139, 139, 139))))
+                        .addComponent(jlbUser)
+                        .addGap(58, 58, 58))
+                    .addComponent(jlbWelcome, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(428, 428, 428))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(115, 115, 115)
+                .addGap(279, 279, 279)
                 .addComponent(jlbWelcome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jlbUser, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addComponent(jlbUser)
+                .addContainerGap(392, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void addAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAlumnosActionPerformed
-        frmAddAlumnos addAlumnos = new frmAddAlumnos(this, alumnosP);
+        frmAddProyectos addAlumnos = new frmAddProyectos(this, alumnosP);
         this.setVisible(false);
         addAlumnos.setVisible(true);
     }//GEN-LAST:event_addAlumnosActionPerformed
 
     private void showAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showAlumnosActionPerformed
-        frmShowAlumnos showAlumnos = new frmShowAlumnos(this, alumnosP);
+        frmShowProyectos showAlumnos = new frmShowProyectos(this, alumnosP);
         this.setVisible(false);
         showAlumnos.setVisible(true);
     }//GEN-LAST:event_showAlumnosActionPerformed
@@ -217,7 +209,6 @@ public class frmMenu extends javax.swing.JFrame
     private javax.swing.JMenuItem addAlumnos;
     private javax.swing.JMenuItem addLibro;
     private javax.swing.JMenuItem addPrestamo;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JLabel jlbUser;

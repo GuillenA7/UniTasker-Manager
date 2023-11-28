@@ -1,12 +1,12 @@
 package proyecto;
 
-public class frmShowAlumnos extends javax.swing.JFrame
+public class frmShowProyectos extends javax.swing.JFrame
 {
 
     private frmMenu menu;
-    Alumnos alumnosP = new Alumnos();
+    Proyectos alumnosP = new Proyectos();
     
-    public frmShowAlumnos(frmMenu menu, Alumnos alumnosP)
+    public frmShowProyectos(frmMenu menu, Proyectos alumnosP)
     {
         initComponents();
         this.menu = menu;
@@ -139,14 +139,15 @@ public class frmShowAlumnos extends javax.swing.JFrame
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmShowAlumnos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmShowProyectos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmShowAlumnos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmShowProyectos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmShowAlumnos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmShowProyectos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmShowAlumnos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmShowProyectos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
@@ -154,7 +155,7 @@ public class frmShowAlumnos extends javax.swing.JFrame
         {
             public void run()
             {
-                // new frmShowAlumnos().setVisible(true);
+                // new frmShowProyectos().setVisible(true);
             }
         });
     }
