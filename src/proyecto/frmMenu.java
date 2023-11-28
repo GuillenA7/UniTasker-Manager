@@ -34,6 +34,8 @@ public class frmMenu extends javax.swing.JFrame
         addPrestamo = new javax.swing.JMenuItem();
         showPrestamo = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
 
@@ -105,6 +107,13 @@ public class frmMenu extends javax.swing.JFrame
         menuBarraNavegacion.add(menuPrestamo);
 
         jMenu3.setText("Informes");
+
+        jMenuItem2.setText("Registrar");
+        jMenu3.add(jMenuItem2);
+
+        jMenuItem1.setText("Mostrar");
+        jMenu3.add(jMenuItem1);
+
         menuBarraNavegacion.add(jMenu3);
 
         setJMenuBar(menuBarraNavegacion);
@@ -133,6 +142,7 @@ public class frmMenu extends javax.swing.JFrame
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void addAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAlumnosActionPerformed
@@ -211,6 +221,8 @@ public class frmMenu extends javax.swing.JFrame
     private javax.swing.JMenuItem addPrestamo;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JLabel jlbUser;
     private javax.swing.JLabel jlbWelcome;
     private javax.swing.JMenu menuAlumnos;

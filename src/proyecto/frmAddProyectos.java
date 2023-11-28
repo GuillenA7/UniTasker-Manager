@@ -1,19 +1,20 @@
 package proyecto;
 
 import java.awt.event.KeyEvent;
+import javax.swing.DefaultComboBoxModel;
 
 public class frmAddProyectos extends javax.swing.JFrame
 {
 
     private frmMenu menu;
-    Proyectos alumnosP = new Proyectos();
+    Proyectos Proyect = new Proyectos();
     
     
     public frmAddProyectos(frmMenu menu, Proyectos alumnosP)
     {
         initComponents();
         this.menu = menu;
-        this.alumnosP = alumnosP;
+        this.Proyect = alumnosP;
     }
 
     @SuppressWarnings("unchecked")
@@ -21,54 +22,43 @@ public class frmAddProyectos extends javax.swing.JFrame
     private void initComponents() {
 
         jlbAlumnos = new javax.swing.JLabel();
-        jlbAdd = new javax.swing.JLabel();
         jlbName = new javax.swing.JLabel();
         jtfName = new javax.swing.JTextField();
         jlbLastname = new javax.swing.JLabel();
-        jtfLastname = new javax.swing.JTextField();
-        jlbGenre = new javax.swing.JLabel();
         jlbStatus = new javax.swing.JLabel();
-        jrbMasc = new javax.swing.JRadioButton();
-        jrbFem = new javax.swing.JRadioButton();
         jrbAct = new javax.swing.JRadioButton();
         jrbInact = new javax.swing.JRadioButton();
-        jlbReg = new javax.swing.JLabel();
-        jtfReg = new javax.swing.JTextField();
         jbtPush = new javax.swing.JButton();
         jbtPop = new javax.swing.JButton();
         jbtBack = new javax.swing.JButton();
         jlbMensaje = new javax.swing.JLabel();
+        jlbEgress = new javax.swing.JLabel();
+        jlbEgressDay = new javax.swing.JLabel();
+        jcbDiaInicio = new javax.swing.JComboBox<>();
+        jlEgressMonth = new javax.swing.JLabel();
+        jcbMesInicio = new javax.swing.JComboBox<>();
+        jlbEntry = new javax.swing.JLabel();
+        jlbEntryDay = new javax.swing.JLabel();
+        jcbDiaFin = new javax.swing.JComboBox<>();
+        jlbEntryMonth = new javax.swing.JLabel();
+        jcbMesFin = new javax.swing.JComboBox<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jlbAlumnos.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jlbAlumnos.setText("Proyecto");
-
-        jlbAdd.setText("Registro");
+        jlbAlumnos.setText("Registrar proyecto");
 
         jlbName.setText("Nombre:");
 
-        jlbLastname.setText("Apellido:");
-
-        jlbGenre.setText("Genero:");
+        jlbLastname.setText("Descripción:");
 
         jlbStatus.setText("Estado:");
-
-        jrbMasc.setText("Masculino");
-
-        jrbFem.setText("Femenino");
 
         jrbAct.setText("Activo");
 
         jrbInact.setText("Inactivo");
-
-        jlbReg.setText("Número de registro:");
-
-        jtfReg.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jtfRegKeyTyped(evt);
-            }
-        });
 
         jbtPush.setText("Agregar");
         jbtPush.addActionListener(new java.awt.event.ActionListener() {
@@ -93,113 +83,162 @@ public class frmAddProyectos extends javax.swing.JFrame
 
         jlbMensaje.setText("-");
 
+        jlbEgress.setText("Fecha de inicio");
+
+        jlbEgressDay.setText("Día:");
+
+        jcbDiaInicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29" }));
+
+        jlEgressMonth.setText("Mes:");
+
+        jcbMesInicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
+        jcbMesInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbMesInicioActionPerformed(evt);
+            }
+        });
+
+        jlbEntry.setText("Fecha de finalizaccion");
+
+        jlbEntryDay.setText("Día:");
+
+        jlbEntryMonth.setText("Mes:");
+
+        jcbMesFin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
+        jcbMesFin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbMesFinActionPerformed(evt);
+            }
+        });
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane2.setViewportView(jTextArea1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jtfReg, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addContainerGap()
-                                        .addComponent(jlbName))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addContainerGap()
-                                        .addComponent(jlbLastname))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addContainerGap()
-                                        .addComponent(jtfName))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addContainerGap()
-                                        .addComponent(jtfLastname))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addContainerGap()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jlbGenre)
-                                            .addComponent(jrbMasc)
-                                            .addComponent(jrbFem))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jrbAct)
-                                            .addComponent(jlbStatus)
-                                            .addComponent(jrbInact))
-                                        .addGap(45, 45, 45))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(124, 124, 124)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jlbAlumnos)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                .addComponent(jlbAdd)
-                                                .addGap(24, 24, 24)))))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .addComponent(jlbReg))))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(20, 20, 20)
-                            .addComponent(jbtPush)
-                            .addGap(33, 33, 33)
-                            .addComponent(jbtPop)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jbtBack)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addComponent(jlbMensaje)))
-                .addContainerGap(38, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jcbDiaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jlbEntryDay))
+                                .addGap(27, 27, 27)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jlEgressMonth)
+                                    .addComponent(jcbMesInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jlbEgress))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlbEntry)
+                            .addComponent(jcbDiaFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jlbEgressDay))
+                        .addGap(8, 8, 8)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlbEntryMonth)
+                            .addComponent(jcbMesFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(145, 145, 145)
+                                .addComponent(jlbAlumnos))
+                            .addComponent(jlbStatus)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jrbAct)
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jbtPush)
+                                        .addGap(33, 33, 33)
+                                        .addComponent(jbtPop)
+                                        .addGap(45, 45, 45)
+                                        .addComponent(jbtBack))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(140, 140, 140)
+                                        .addComponent(jlbMensaje))
+                                    .addComponent(jrbInact))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jlbLastname)
+                                .addGap(294, 423, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jlbName)
+                                .addGap(36, 36, 36)
+                                .addComponent(jtfName))
+                            .addComponent(jScrollPane2))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jlbAlumnos)
-                .addGap(18, 18, 18)
-                .addComponent(jlbAdd)
-                .addGap(18, 18, 18)
-                .addComponent(jlbName)
-                .addGap(18, 18, 18)
-                .addComponent(jtfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlbName))
                 .addGap(18, 18, 18)
                 .addComponent(jlbLastname)
                 .addGap(18, 18, 18)
-                .addComponent(jtfLastname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jlbEgress)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jlEgressMonth)
+                            .addComponent(jlbEntryDay))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jcbDiaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jcbMesInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jlbEntryMonth)
+                            .addGap(18, 18, 18)
+                            .addComponent(jcbMesFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jlbEntry)
+                            .addGap(18, 18, 18)
+                            .addComponent(jlbEgressDay)
+                            .addGap(18, 18, 18)
+                            .addComponent(jcbDiaFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
+                .addComponent(jlbStatus)
+                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlbGenre)
-                    .addComponent(jlbStatus))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jrbMasc)
-                    .addComponent(jrbAct))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jrbFem)
+                    .addComponent(jrbAct)
                     .addComponent(jrbInact))
                 .addGap(18, 18, 18)
-                .addComponent(jlbReg)
-                .addGap(18, 18, 18)
-                .addComponent(jtfReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addComponent(jlbMensaje)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbtPush)
                     .addComponent(jbtPop)
                     .addComponent(jbtBack))
-                .addContainerGap())
+                .addGap(115, 115, 115))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbtPopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtPopActionPerformed
-        alumnosP.pop();
+        Proyect.pop();
     }//GEN-LAST:event_jbtPopActionPerformed
 
     private void jbtPushActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtPushActionPerformed
-        String name = jtfName.getText(), lastname = jtfLastname.getText();
+        String nombre = jtfName.getText(), descripcion = jtfDesc.getText();
+        int diainicio = 
+        
         char genre = 'O';
         boolean status = true;
         
@@ -208,12 +247,12 @@ public class frmAddProyectos extends javax.swing.JFrame
         else if (jrbFem.isSelected())
             genre = 'F';
         
-        if(jrbInact.isSelected())
+        if jtfDescsSelected())
             status = false;
         
         int reg = Integer.parseInt(jtfReg.getText());
         
-        alumnosP.push(name, lastname, genre, reg, status);
+        Proyect.push(String nombre, String descripcion, int diainicio, String mesinicio, int diafin, String mesfin, boolean estado);
         jlbMensaje.setText("Registrado");
         limpiarCampos();
     }//GEN-LAST:event_jbtPushActionPerformed
@@ -223,98 +262,130 @@ public class frmAddProyectos extends javax.swing.JFrame
         this.dispose();
     }//GEN-LAST:event_jbtBackActionPerformed
 
-    private void jtfRegKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfRegKeyTyped
-        int size = 8;
-        char charac = evt.getKeyChar();
-        jlbMensaje.setVisible(false);
-        
-        if(charac == KeyEvent.VK_ENTER)
-            jbtPush.requestFocus();
-        else
+    private void jcbMesInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbMesInicioActionPerformed
+        DefaultComboBoxModel egress = new DefaultComboBoxModel();
+        egress.addElement("1");
+        egress.addElement("2");
+        egress.addElement("3");
+        egress.addElement("4");
+        egress.addElement("5");
+        egress.addElement("6");
+        egress.addElement("7");
+        egress.addElement("8");
+        egress.addElement("9");
+        egress.addElement("10");
+        egress.addElement("11");
+        egress.addElement("12");
+        egress.addElement("13");
+        egress.addElement("14");
+        egress.addElement("15");
+        egress.addElement("16");
+        egress.addElement("17");
+        egress.addElement("18");
+        egress.addElement("19");
+        egress.addElement("20");
+        egress.addElement("21");
+        egress.addElement("22");
+        egress.addElement("23");
+        egress.addElement("24");
+        egress.addElement("25");
+        egress.addElement("26");
+        egress.addElement("27");
+        egress.addElement("28");
+        egress.addElement("29");
+        switch(jcbMesInicio.getSelectedIndex())
         {
-            if(!Character.isDigit(charac))
-            {
-                getToolkit().beep();
-                evt.consume();
-                jlbMensaje.setVisible(true);
-                jlbMensaje.setText("Solo capturar números.");
-            }
-            
-            if(jtfReg.getText().length() >= size && charac != KeyEvent.VK_ENTER)
-            {
-                getToolkit().beep();
-                evt.consume();
-                jlbMensaje.setVisible(true);
-                jlbMensaje.setText("Máximo 8 dígitos.");
-            }
+            case 0: case 2: case 4: case 6: case 7: case 9: case 11:
+            egress.addElement("30");
+            egress.addElement("31");
+            break;
+            case 3: case 5: case 8: case 10:
+            egress.addElement("30");
+            break;
+
         }
-    }//GEN-LAST:event_jtfRegKeyTyped
+        jcbDiaInicio.setModel(egress);
+    }//GEN-LAST:event_jcbMesInicioActionPerformed
+
+    private void jcbMesFinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbMesFinActionPerformed
+        DefaultComboBoxModel entry = new DefaultComboBoxModel();
+        entry.addElement("1");
+        entry.addElement("2");
+        entry.addElement("3");
+        entry.addElement("4");
+        entry.addElement("5");
+        entry.addElement("6");
+        entry.addElement("7");
+        entry.addElement("8");
+        entry.addElement("9");
+        entry.addElement("10");
+        entry.addElement("11");
+        entry.addElement("12");
+        entry.addElement("13");
+        entry.addElement("14");
+        entry.addElement("15");
+        entry.addElement("16");
+        entry.addElement("17");
+        entry.addElement("18");
+        entry.addElement("19");
+        entry.addElement("20");
+        entry.addElement("21");
+        entry.addElement("22");
+        entry.addElement("23");
+        entry.addElement("24");
+        entry.addElement("25");
+        entry.addElement("26");
+        entry.addElement("27");
+        entry.addElement("28");
+        entry.addElement("29");
+        switch(jcbMesFin.getSelectedIndex())
+        {
+            case 0: case 2: case 4: case 6: case 7: case 9: case 11:
+            entry.addElement("30");
+            entry.addElement("31");
+            break;
+            case 3: case 5: case 8: case 10:
+            entry.addElement("30");
+            break;
+
+        }
+        jcbDiaFin.setModel(entry);
+    }//GEN-LAST:event_jcbMesFinActionPerformed
 
     public void limpiarCampos()
     {
         jtfName.setText("");
-        jtfLastname.setText("");
+        jtfDesc.setText("");
         jtfReg.setText("");
         jrbAct.setSelected(false);
         jrbInact.setSelected(false);
         jrbFem.setSelected(false);
         jrbMasc.setSelected(false);
     }
-    
-    public static void main(String args[])
-    {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmAddProyectos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmAddProyectos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmAddProyectos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmAddProyectos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable()
-        {
-            public void run()
-            {
-                // new frmAddProyectos().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton jbtBack;
     private javax.swing.JButton jbtPop;
     private javax.swing.JButton jbtPush;
-    private javax.swing.JLabel jlbAdd;
+    private javax.swing.JComboBox<String> jcbDiaFin;
+    private javax.swing.JComboBox<String> jcbDiaInicio;
+    private javax.swing.JComboBox<String> jcbMesFin;
+    private javax.swing.JComboBox<String> jcbMesInicio;
+    private javax.swing.JLabel jlEgressMonth;
     private javax.swing.JLabel jlbAlumnos;
-    private javax.swing.JLabel jlbGenre;
+    private javax.swing.JLabel jlbEgress;
+    private javax.swing.JLabel jlbEgressDay;
+    private javax.swing.JLabel jlbEntry;
+    private javax.swing.JLabel jlbEntryDay;
+    private javax.swing.JLabel jlbEntryMonth;
     private javax.swing.JLabel jlbLastname;
     private javax.swing.JLabel jlbMensaje;
     private javax.swing.JLabel jlbName;
-    private javax.swing.JLabel jlbReg;
     private javax.swing.JLabel jlbStatus;
     private javax.swing.JRadioButton jrbAct;
-    private javax.swing.JRadioButton jrbFem;
     private javax.swing.JRadioButton jrbInact;
-    private javax.swing.JRadioButton jrbMasc;
-    private javax.swing.JTextField jtfLastname;
     private javax.swing.JTextField jtfName;
-    private javax.swing.JTextField jtfReg;
     // End of variables declaration//GEN-END:variables
 }

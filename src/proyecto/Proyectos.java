@@ -2,20 +2,24 @@ package proyecto;
 
 public class Proyectos
 {
-    private String name;
-    private String lastname;
-    private char genre;
-    private int reg;
-    private boolean status;
+    private String nombre;
+    private String descripcion;
+    private boolean estado;
     private Proyectos next;
+    private int diainicio;
+    private String mesinicio;
+    private int diafin;
+    private String mesfin;
 
-    public Proyectos(String name, String lastname, char genre, int reg, boolean status)
+    public Proyectos(String nombre, String descripcion, int diainicio, String mesinicio, int diafin, String mesfin, boolean estado)
     {
-        this.name = name;
-        this.lastname = lastname;
-        this.genre = genre;
-        this.reg = reg;
-        this.status = status;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.diainicio = diainicio;
+        this.mesinicio = mesinicio;
+        this.diafin = diafin;
+        this.mesfin = mesfin;
+        this.estado = estado;
         this.next = null;
     }
 
@@ -24,54 +28,66 @@ public class Proyectos
         
     }
 
-    public String getName()
+    public String getNombre()
     {
-        return name;
+        return nombre;
     }
 
-    public void setName(String name)
+    public void setNombre(String nombre)
     {
-        this.name = name;
+        this.nombre = nombre;
     }
 
-    public String getLastname()
+    public String getDescripcion()
     {
-        return lastname;
+        return descripcion;
     }
 
-    public void setLastname(String lastname)
+    public void setDescripcion(String descripcion)
     {
-        this.lastname = lastname;
+        this.descripcion = descripcion;
     }
 
-    public char getGenre()
-    {
-        return genre;
+    public int getDiainicio() {
+        return diainicio;
     }
 
-    public void setGenre(char genre)
-    {
-        this.genre = genre;
+    public void setDiainicio(int diainicio) {
+        this.diainicio = diainicio;
     }
 
-    public int getReg()
-    {
-        return reg;
+    public String getMesinicio() {
+        return mesinicio;
     }
 
-    public void setReg(int reg)
-    {
-        this.reg = reg;
+    public void setMesinicio(String mesinicio) {
+        this.mesinicio = mesinicio;
     }
 
-    public boolean isStatus()
-    {
-        return status;
+    public int getDiafin() {
+        return diafin;
     }
 
-    public void setStatus(boolean status)
+    public void setDiafin(int diafin) {
+        this.diafin = diafin;
+    }
+
+    public String getMesfin() {
+        return mesfin;
+    }
+
+    public void setMesfin(String mesfin) {
+        this.mesfin = mesfin;
+    }
+
+    public boolean isEstado()
     {
-        this.status = status;
+        return estado;
+    }
+
+    public void setEstado(boolean estado)
+    {
+        this.estado = estado;
     }
 
     public Proyectos getNext()
@@ -84,9 +100,9 @@ public class Proyectos
         this.next = next;
     }
     
-    public void push (String name, String lastname, char genre, int reg, boolean status)
+    public void push (String nombre, String descripcion, int diainicio, String mesinicio, int diafin, String mesfin, boolean estado)
     {
-        Proyectos node = new Proyectos(name, lastname, genre, reg, status);
+        Proyectos node = new Proyectos(nombre, descripcion, diainicio, mesinicio, diafin, mesfin, estado);
         
         if(next == null)
             next = node;
@@ -104,16 +120,18 @@ public class Proyectos
         String text = "";
         
         if(next == null)
-            text = "La PILA de ALUMNOS está vacía.";
+            text = "La PILA de PROYECTOS está vacía.";
         else
         {
-            text = "Alumnos registrados:";
+            text = "Proyecto registrado:";
             while (aux != null) {
-                text += "\nNombre: " + aux.getName();
-                text += "\nApellido: " + aux.getLastname();
-                text += "\nGénero: " + aux.getGenre();
-                text += "\nRegistro: " + aux.getReg();
-                if (aux.isStatus())
+                text += "\nNombre: " + aux.getNombre();
+                text += "\nDescripción: " + aux.getDescripcion();
+                text += "\nDia de inicio: " + aux.getDiainicio();
+                text += "\nMes de inicio: " + aux.getMesinicio();
+                text += "\nDia de Finalización: " + aux.getDiafin();
+                text += "\nMes de Finalización: " + aux.getMesfin();
+                if (aux.isEstado())
                     text += "\nEstado: Activo";
                 else
                     text += "\nEstado: Inactivo";
@@ -129,7 +147,7 @@ public class Proyectos
         Proyectos aux = next;
         
         if(next == null)
-            System.out.println("La PILA de ALUMNOS está vacía.");
+            System.out.println("La PILA de PROYECTOS está vacía.");
         else
         {
             if(aux.getNext() == null)
