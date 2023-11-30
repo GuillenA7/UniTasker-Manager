@@ -4,10 +4,6 @@ public class frmMenu extends javax.swing.JFrame
 {
 
     private frmIngreso ingreso;
-    Proyectos proyecto = new Proyectos();
-    Tareas libroP = new Tareas();
-    Recursos prestamoP = new Recursos();
-    
     
     public frmMenu(String usr, frmIngreso ingreso)
     {
@@ -25,13 +21,13 @@ public class frmMenu extends javax.swing.JFrame
         menuBarraNavegacion = new javax.swing.JMenuBar();
         menuAlumnos = new javax.swing.JMenu();
         addProyectos = new javax.swing.JMenuItem();
-        showAlumnos = new javax.swing.JMenuItem();
-        menuLibro = new javax.swing.JMenu();
-        addLibro = new javax.swing.JMenuItem();
-        showLibro = new javax.swing.JMenuItem();
-        menuPrestamo = new javax.swing.JMenu();
-        addPrestamo = new javax.swing.JMenuItem();
-        showPrestamo = new javax.swing.JMenuItem();
+        showProyectos = new javax.swing.JMenuItem();
+        menuTareas = new javax.swing.JMenu();
+        addTareas = new javax.swing.JMenuItem();
+        showTareas = new javax.swing.JMenuItem();
+        menuRecurso = new javax.swing.JMenu();
+        addRecurso = new javax.swing.JMenuItem();
+        showRecurso = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -62,55 +58,55 @@ public class frmMenu extends javax.swing.JFrame
         });
         menuAlumnos.add(addProyectos);
 
-        showAlumnos.setText("Mostrar");
-        showAlumnos.addActionListener(new java.awt.event.ActionListener() {
+        showProyectos.setText("Mostrar");
+        showProyectos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                showAlumnosActionPerformed(evt);
+                showProyectosActionPerformed(evt);
             }
         });
-        menuAlumnos.add(showAlumnos);
+        menuAlumnos.add(showProyectos);
 
         menuBarraNavegacion.add(menuAlumnos);
 
-        menuLibro.setText("Tareas");
+        menuTareas.setText("Tareas");
 
-        addLibro.setText("Registrar");
-        addLibro.addActionListener(new java.awt.event.ActionListener() {
+        addTareas.setText("Registrar");
+        addTareas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addLibroActionPerformed(evt);
+                addTareasActionPerformed(evt);
             }
         });
-        menuLibro.add(addLibro);
+        menuTareas.add(addTareas);
 
-        showLibro.setText("Mostrar");
-        showLibro.addActionListener(new java.awt.event.ActionListener() {
+        showTareas.setText("Mostrar");
+        showTareas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                showLibroActionPerformed(evt);
+                showTareasActionPerformed(evt);
             }
         });
-        menuLibro.add(showLibro);
+        menuTareas.add(showTareas);
 
-        menuBarraNavegacion.add(menuLibro);
+        menuBarraNavegacion.add(menuTareas);
 
-        menuPrestamo.setText("Recursos");
+        menuRecurso.setText("Recursos");
 
-        addPrestamo.setText("Registrar");
-        addPrestamo.addActionListener(new java.awt.event.ActionListener() {
+        addRecurso.setText("Registrar");
+        addRecurso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addPrestamoActionPerformed(evt);
+                addRecursoActionPerformed(evt);
             }
         });
-        menuPrestamo.add(addPrestamo);
+        menuRecurso.add(addRecurso);
 
-        showPrestamo.setText("Mostrar");
-        showPrestamo.addActionListener(new java.awt.event.ActionListener() {
+        showRecurso.setText("Mostrar");
+        showRecurso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                showPrestamoActionPerformed(evt);
+                showRecursoActionPerformed(evt);
             }
         });
-        menuPrestamo.add(showPrestamo);
+        menuRecurso.add(showRecurso);
 
-        menuBarraNavegacion.add(menuPrestamo);
+        menuBarraNavegacion.add(menuRecurso);
 
         jMenu3.setText("Informes");
 
@@ -143,47 +139,51 @@ public class frmMenu extends javax.swing.JFrame
     }// </editor-fold>//GEN-END:initComponents
 
     private void addProyectosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addProyectosActionPerformed
-        AddProyectos proyecto = new AddProyectos();
+        frmAddProyectos proyecto = new frmAddProyectos();
         
         jDesktopPane1.add(proyecto);
         
         proyecto.show();
     }//GEN-LAST:event_addProyectosActionPerformed
 
-    private void showAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showAlumnosActionPerformed
+    private void showProyectosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showProyectosActionPerformed
         frmShowProyectos showAlumnos = new frmShowProyectos(this, alumnosP);
-        this.setVisible(false);
-        showAlumnos.setVisible(true);
-    }//GEN-LAST:event_showAlumnosActionPerformed
-
-    private void addLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addLibroActionPerformed
-        frmAddTareas addLibro = new frmAddTareas(this, libroP);
-        this.setVisible(false);
-        addLibro.setVisible(true);
-    }//GEN-LAST:event_addLibroActionPerformed
-
-    private void showLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showLibroActionPerformed
-        frmShowTarea showLibro = new frmShowTarea(this, libroP);
-        this.setVisible(false);
-        showLibro.setVisible(true);
-    }//GEN-LAST:event_showLibroActionPerformed
-
-    private void addPrestamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPrestamoActionPerformed
-        frmAddRecursos addPrestamo = new frmAddRecursos(this, prestamoP);
         
-        addPrestamo.setVisible(true);
-    }//GEN-LAST:event_addPrestamoActionPerformed
+        showAlumnos.setVisible(true);
+    }//GEN-LAST:event_showProyectosActionPerformed
 
-    private void showPrestamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showPrestamoActionPerformed
+    private void addTareasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTareasActionPerformed
+        frmAddTareas tareas = new frmAddTareas();
+        
+        jDesktopPane1.add(tareas);
+        
+        tareas.show();
+    }//GEN-LAST:event_addTareasActionPerformed
+
+    private void showTareasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showTareasActionPerformed
+        frmShowTarea showLibro = new frmShowTarea(this, libroP);
+        
+        showLibro.setVisible(true);
+    }//GEN-LAST:event_showTareasActionPerformed
+
+    private void addRecursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addRecursoActionPerformed
+        frmAddRecursos recursos = new frmAddRecursos();
+        
+        jDesktopPane1.add(recursos);
+        
+        recursos.show();
+    }//GEN-LAST:event_addRecursoActionPerformed
+
+    private void showRecursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showRecursoActionPerformed
         frmShowRecursos showPrestamo = new frmShowRecursos(this, prestamoP);
-        this.setVisible(false);
+        
         showPrestamo.setVisible(true);
-    }//GEN-LAST:event_showPrestamoActionPerformed
+    }//GEN-LAST:event_showRecursoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem addLibro;
-    private javax.swing.JMenuItem addPrestamo;
     private javax.swing.JMenuItem addProyectos;
+    private javax.swing.JMenuItem addRecurso;
+    private javax.swing.JMenuItem addTareas;
     public javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
@@ -191,10 +191,10 @@ public class frmMenu extends javax.swing.JFrame
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenu menuAlumnos;
     private javax.swing.JMenuBar menuBarraNavegacion;
-    private javax.swing.JMenu menuLibro;
-    private javax.swing.JMenu menuPrestamo;
-    private javax.swing.JMenuItem showAlumnos;
-    private javax.swing.JMenuItem showLibro;
-    private javax.swing.JMenuItem showPrestamo;
+    private javax.swing.JMenu menuRecurso;
+    private javax.swing.JMenu menuTareas;
+    private javax.swing.JMenuItem showProyectos;
+    private javax.swing.JMenuItem showRecurso;
+    private javax.swing.JMenuItem showTareas;
     // End of variables declaration//GEN-END:variables
 }

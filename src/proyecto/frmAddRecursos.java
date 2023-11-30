@@ -9,20 +9,26 @@ public class frmAddRecursos extends javax.swing.JFrame
     private frmMenu menu;
     Recursos prestamoP = new Recursos();
     
-    public frmAddRecursos(frmMenu menu, Recursos prestamoP)
+    public frmAddRecursos()
     {
         initComponents();
-        this.menu = menu;
-        this.prestamoP = prestamoP;
     }
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jlbMensaje = new javax.swing.JLabel();
+        jbtPush = new javax.swing.JButton();
+        jbtPop = new javax.swing.JButton();
+        jbtBack = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
         jlbPrestamo = new javax.swing.JLabel();
+        jRadioButton2 = new javax.swing.JRadioButton();
         jlbAdd = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jlbReg = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         jtfReg = new javax.swing.JTextField();
         jlbFee = new javax.swing.JLabel();
         jtfFee = new javax.swing.JTextField();
@@ -36,22 +42,44 @@ public class frmAddRecursos extends javax.swing.JFrame
         jcbEntryDay = new javax.swing.JComboBox<>();
         jlbEntryMonth = new javax.swing.JLabel();
         jcbEntryMonth = new javax.swing.JComboBox<>();
-        jlbMensaje = new javax.swing.JLabel();
-        jbtPush = new javax.swing.JButton();
-        jbtPop = new javax.swing.JButton();
-        jbtBack = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setClosable(true);
+
+        jlbMensaje.setText("-");
+
+        jbtPush.setText("Agregar");
+        jbtPush.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtPushActionPerformed(evt);
+            }
+        });
+
+        jbtPop.setText("Eliminar");
+        jbtPop.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtPopActionPerformed(evt);
+            }
+        });
+
+        jbtBack.setText("Regresar");
+        jbtBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtBackActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Estado:");
+
+        jRadioButton1.setText("En proceso");
 
         jlbPrestamo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jlbPrestamo.setText("Tarea");
+        jlbPrestamo.setText("Recursos");
+
+        jRadioButton2.setText("Finalizado");
 
         jlbAdd.setText("Registro");
+
+        jLabel2.setText("Responsable:");
 
         jlbReg.setText("Nombre:");
 
@@ -90,37 +118,6 @@ public class frmAddRecursos extends javax.swing.JFrame
                 jcbEntryMonthActionPerformed(evt);
             }
         });
-
-        jlbMensaje.setText("-");
-
-        jbtPush.setText("Agregar");
-        jbtPush.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtPushActionPerformed(evt);
-            }
-        });
-
-        jbtPop.setText("Eliminar");
-        jbtPop.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtPopActionPerformed(evt);
-            }
-        });
-
-        jbtBack.setText("Regresar");
-        jbtBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtBackActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("Estado:");
-
-        jRadioButton1.setText("En proceso");
-
-        jRadioButton2.setText("Finalizado");
-
-        jLabel2.setText("Responsable:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -170,12 +167,7 @@ public class frmAddRecursos extends javax.swing.JFrame
                             .addContainerGap()
                             .addComponent(jLabel2)
                             .addGap(18, 18, 18)
-                            .addComponent(jTextField1))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(210, 210, 210)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jlbPrestamo)
-                                .addComponent(jlbAdd))))
+                            .addComponent(jTextField1)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(65, 65, 65)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,8 +179,15 @@ public class frmAddRecursos extends javax.swing.JFrame
                                 .addGap(50, 50, 50)
                                 .addComponent(jbtPop)
                                 .addGap(73, 73, 73)
-                                .addComponent(jbtBack)))))
-                .addContainerGap(37, Short.MAX_VALUE))
+                                .addComponent(jbtBack))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(174, 174, 174)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlbPrestamo)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(28, 28, 28)
+                                .addComponent(jlbAdd)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -245,15 +244,36 @@ public class frmAddRecursos extends javax.swing.JFrame
                     .addComponent(jbtPush)
                     .addComponent(jbtPop)
                     .addComponent(jbtBack))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jbtPushActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtPushActionPerformed
+        int reg = Integer.parseInt(jtfReg.getText());
+
+        int egressDay = Integer.parseInt(jcbEgressDay.getSelectedItem().toString());
+        String egressMonth = jcbEgressMonth.getSelectedItem().toString();
+        int entryDay = Integer.parseInt(jcbEntryDay.getSelectedItem().toString());
+        String entryMonth = jcbEntryMonth.getSelectedItem().toString();
+
+        float fees = Float.parseFloat(jtfFee.getText());
+
+        prestamoP.push(reg, egressDay, egressMonth, entryDay, entryMonth, fees);
+        jlbMensaje.setText("Registrado");
+
+        limpiarCampos();
+    }//GEN-LAST:event_jbtPushActionPerformed
+
     private void jbtPopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtPopActionPerformed
         prestamoP.pop();
     }//GEN-LAST:event_jbtPopActionPerformed
+
+    private void jbtBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtBackActionPerformed
+        menu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jbtBackActionPerformed
 
     private void jtfRegKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfRegKeyTyped
         int size = 8;
@@ -281,27 +301,6 @@ public class frmAddRecursos extends javax.swing.JFrame
             }
         }
     }//GEN-LAST:event_jtfRegKeyTyped
-
-    private void jbtBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtBackActionPerformed
-        menu.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jbtBackActionPerformed
-
-    private void jbtPushActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtPushActionPerformed
-        int reg = Integer.parseInt(jtfReg.getText());
-
-        int egressDay = Integer.parseInt(jcbEgressDay.getSelectedItem().toString());
-        String egressMonth = jcbEgressMonth.getSelectedItem().toString();
-        int entryDay = Integer.parseInt(jcbEntryDay.getSelectedItem().toString());
-        String entryMonth = jcbEntryMonth.getSelectedItem().toString();
-        
-        float fees = Float.parseFloat(jtfFee.getText());
-
-        prestamoP.push(reg, egressDay, egressMonth, entryDay, entryMonth, fees);
-        jlbMensaje.setText("Registrado");
-        
-        limpiarCampos();
-    }//GEN-LAST:event_jbtPushActionPerformed
 
     private void jcbEgressMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbEgressMonthActionPerformed
         DefaultComboBoxModel egress = new DefaultComboBoxModel();
@@ -337,13 +336,13 @@ public class frmAddRecursos extends javax.swing.JFrame
         switch(jcbEgressMonth.getSelectedIndex())
         {
             case 0: case 2: case 4: case 6: case 7: case 9: case 11:
-                egress.addElement("30");
-                egress.addElement("31");
-                break;
+            egress.addElement("30");
+            egress.addElement("31");
+            break;
             case 3: case 5: case 8: case 10:
-                egress.addElement("30");
-                break;
-            
+            egress.addElement("30");
+            break;
+
         }
         jcbEgressDay.setModel(egress);
     }//GEN-LAST:event_jcbEgressMonthActionPerformed
@@ -382,13 +381,13 @@ public class frmAddRecursos extends javax.swing.JFrame
         switch(jcbEntryMonth.getSelectedIndex())
         {
             case 0: case 2: case 4: case 6: case 7: case 9: case 11:
-                entry.addElement("30");
-                entry.addElement("31");
-                break;
+            entry.addElement("30");
+            entry.addElement("31");
+            break;
             case 3: case 5: case 8: case 10:
-                entry.addElement("30");
-                break;
-            
+            entry.addElement("30");
+            break;
+
         }
         jcbEntryDay.setModel(entry);
     }//GEN-LAST:event_jcbEntryMonthActionPerformed
@@ -401,42 +400,6 @@ public class frmAddRecursos extends javax.swing.JFrame
         jcbEgressMonth.setSelectedIndex(1);
         jcbEntryDay.setSelectedIndex(1);
         jcbEntryMonth.setSelectedIndex(1);
-    }
-    
-    public static void main(String args[])
-    {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmAddRecursos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmAddRecursos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmAddRecursos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmAddRecursos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable()
-        {
-            public void run()
-            {
-                // new frmAddRecursos().setVisible(true);
-            }
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
