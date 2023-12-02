@@ -29,13 +29,12 @@ public class frmMenu extends javax.swing.JFrame
         addRecurso = new javax.swing.JMenuItem();
         showRecurso = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        addInforme = new javax.swing.JMenuItem();
+        showInforme = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1020, 640));
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -51,6 +50,7 @@ public class frmMenu extends javax.swing.JFrame
         menuAlumnos.setText("Proyectos");
 
         addProyectos.setText("Registrar");
+        addProyectos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         addProyectos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addProyectosActionPerformed(evt);
@@ -59,6 +59,7 @@ public class frmMenu extends javax.swing.JFrame
         menuAlumnos.add(addProyectos);
 
         showProyectos.setText("Mostrar");
+        showProyectos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         showProyectos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 showProyectosActionPerformed(evt);
@@ -71,6 +72,7 @@ public class frmMenu extends javax.swing.JFrame
         menuTareas.setText("Tareas");
 
         addTareas.setText("Registrar");
+        addTareas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         addTareas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addTareasActionPerformed(evt);
@@ -79,6 +81,7 @@ public class frmMenu extends javax.swing.JFrame
         menuTareas.add(addTareas);
 
         showTareas.setText("Mostrar");
+        showTareas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         showTareas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 showTareasActionPerformed(evt);
@@ -91,6 +94,7 @@ public class frmMenu extends javax.swing.JFrame
         menuRecurso.setText("Recursos");
 
         addRecurso.setText("Registrar");
+        addRecurso.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         addRecurso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addRecursoActionPerformed(evt);
@@ -99,6 +103,7 @@ public class frmMenu extends javax.swing.JFrame
         menuRecurso.add(addRecurso);
 
         showRecurso.setText("Mostrar");
+        showRecurso.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         showRecurso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 showRecursoActionPerformed(evt);
@@ -110,11 +115,23 @@ public class frmMenu extends javax.swing.JFrame
 
         jMenu3.setText("Informes");
 
-        jMenuItem2.setText("Registrar");
-        jMenu3.add(jMenuItem2);
+        addInforme.setText("Registrar");
+        addInforme.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        addInforme.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addInformeActionPerformed(evt);
+            }
+        });
+        jMenu3.add(addInforme);
 
-        jMenuItem1.setText("Mostrar");
-        jMenu3.add(jMenuItem1);
+        showInforme.setText("Mostrar");
+        showInforme.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        showInforme.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showInformeActionPerformed(evt);
+            }
+        });
+        jMenu3.add(showInforme);
 
         menuBarraNavegacion.add(jMenu3);
 
@@ -147,9 +164,11 @@ public class frmMenu extends javax.swing.JFrame
     }//GEN-LAST:event_addProyectosActionPerformed
 
     private void showProyectosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showProyectosActionPerformed
-        frmShowProyectos showAlumnos = new frmShowProyectos(this, alumnosP);
+        frmShowProyectos proyecto = new frmShowProyectos();
         
-        showAlumnos.setVisible(true);
+        jDesktopPane1.add(proyecto);
+        
+        proyecto.show();
     }//GEN-LAST:event_showProyectosActionPerformed
 
     private void addTareasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTareasActionPerformed
@@ -161,9 +180,11 @@ public class frmMenu extends javax.swing.JFrame
     }//GEN-LAST:event_addTareasActionPerformed
 
     private void showTareasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showTareasActionPerformed
-        frmShowTarea showLibro = new frmShowTarea(this, libroP);
+        frmShowTareas tareas = new frmShowTareas();
         
-        showLibro.setVisible(true);
+        jDesktopPane1.add(tareas);
+        
+        tareas.show();
     }//GEN-LAST:event_showTareasActionPerformed
 
     private void addRecursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addRecursoActionPerformed
@@ -175,24 +196,42 @@ public class frmMenu extends javax.swing.JFrame
     }//GEN-LAST:event_addRecursoActionPerformed
 
     private void showRecursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showRecursoActionPerformed
-        frmShowRecursos showPrestamo = new frmShowRecursos(this, prestamoP);
+        frmShowRecursos recursos = new frmShowRecursos();
         
-        showPrestamo.setVisible(true);
+        jDesktopPane1.add(recursos);
+        
+        recursos.show();
     }//GEN-LAST:event_showRecursoActionPerformed
 
+    private void addInformeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addInformeActionPerformed
+        frmAddInforme recursos = new frmAddInforme();
+        
+        jDesktopPane1.add(recursos);
+        
+        recursos.show();
+    }//GEN-LAST:event_addInformeActionPerformed
+
+    private void showInformeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showInformeActionPerformed
+        frmShowInforme recursos = new frmShowInforme();
+        
+        jDesktopPane1.add(recursos);
+        
+        recursos.show();
+    }//GEN-LAST:event_showInformeActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem addInforme;
     private javax.swing.JMenuItem addProyectos;
     private javax.swing.JMenuItem addRecurso;
     private javax.swing.JMenuItem addTareas;
     public javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenu menuAlumnos;
     private javax.swing.JMenuBar menuBarraNavegacion;
     private javax.swing.JMenu menuRecurso;
     private javax.swing.JMenu menuTareas;
+    private javax.swing.JMenuItem showInforme;
     private javax.swing.JMenuItem showProyectos;
     private javax.swing.JMenuItem showRecurso;
     private javax.swing.JMenuItem showTareas;

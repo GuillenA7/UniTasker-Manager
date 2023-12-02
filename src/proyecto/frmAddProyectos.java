@@ -1,6 +1,5 @@
 package proyecto;
 
-import java.awt.event.KeyEvent;
 import javax.swing.DefaultComboBoxModel;
 
 public class frmAddProyectos extends javax.swing.JInternalFrame {
@@ -227,25 +226,7 @@ public class frmAddProyectos extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbtPushActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtPushActionPerformed
-        String nombre = jtfName.getText(), descripcion = jtfDesc.getText();
-        int diainicio =
-
-        char genre = 'O';
-        boolean status = true;
-
-        if(jrbMasc.isSelected())
-        genre = 'M';
-        else if (jrbFem.isSelected())
-        genre = 'F';
-
-        if jtfDescsSelected())
-        status = false;
-
-        int reg = Integer.parseInt(jtfReg.getText());
-
-        Proyect.push(String nombre, String descripcion, int diainicio, String mesinicio, int diafin, String mesfin, boolean estado);
-        jlbMensaje.setText("Registrado");
-        limpiarCampos();
+        
     }//GEN-LAST:event_jbtPushActionPerformed
 
     private void jbtPopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtPopActionPerformed
@@ -253,7 +234,6 @@ public class frmAddProyectos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jbtPopActionPerformed
 
     private void jbtBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtBackActionPerformed
-        menu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jbtBackActionPerformed
 

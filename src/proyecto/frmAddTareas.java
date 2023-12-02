@@ -3,7 +3,7 @@ package proyecto;
 import java.awt.event.KeyEvent;
 import javax.swing.DefaultComboBoxModel;
 
-public class frmAddTareas extends javax.swing.JFrame
+public class frmAddTareas extends javax.swing.JInternalFrame
 {
 
     private frmMenu menu;
@@ -276,7 +276,6 @@ public class frmAddTareas extends javax.swing.JFrame
     }//GEN-LAST:event_jbtPopActionPerformed
 
     private void jbtBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtBackActionPerformed
-        menu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jbtBackActionPerformed
 

@@ -10,12 +10,12 @@ package proyecto;
  *
  * @author Usuario
  */
-public class frmShowRecursos extends javax.swing.JInternalFrame {
+public class frmShowInforme extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form frmShowRecursos
+     * Creates new form frmShowInforme
      */
-    public frmShowRecursos() {
+    public frmShowInforme() {
         initComponents();
     }
 
