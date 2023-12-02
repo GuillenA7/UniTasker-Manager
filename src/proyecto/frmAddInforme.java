@@ -45,6 +45,7 @@ public class frmAddInforme extends javax.swing.JInternalFrame {
         jlbAlumnos.setText("Informe");
 
         jbtClean.setText("Limpiar");
+        jbtClean.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jbtClean.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtCleanActionPerformed(evt);
@@ -52,6 +53,7 @@ public class frmAddInforme extends javax.swing.JInternalFrame {
         });
 
         jbtBack.setText("Regresar");
+        jbtBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jbtBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtBackActionPerformed(evt);
@@ -63,8 +65,10 @@ public class frmAddInforme extends javax.swing.JInternalFrame {
         jLabel2.setText("Proyecto Asociado:");
 
         jButton1.setText("Guardar");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jTextArea1.setColumns(20);
+        jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
         jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);

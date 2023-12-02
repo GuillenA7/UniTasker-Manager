@@ -31,6 +31,7 @@ public class frmShowProyectos extends javax.swing.JInternalFrame
         jScrollPane1.add(jtaResultado);
 
         jbtClean.setText("Limpiar");
+        jbtClean.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jbtClean.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtCleanActionPerformed(evt);
@@ -38,6 +39,7 @@ public class frmShowProyectos extends javax.swing.JInternalFrame
         });
 
         jbtBack.setText("Regresar");
+        jbtBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jbtBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtBackActionPerformed(evt);

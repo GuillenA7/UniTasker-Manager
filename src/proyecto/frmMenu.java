@@ -50,7 +50,7 @@ public class frmMenu extends javax.swing.JFrame
         menuAlumnos.setText("Proyectos");
 
         addProyectos.setText("Registrar");
-        addProyectos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        addProyectos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addProyectos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addProyectosActionPerformed(evt);
@@ -59,7 +59,7 @@ public class frmMenu extends javax.swing.JFrame
         menuAlumnos.add(addProyectos);
 
         showProyectos.setText("Mostrar");
-        showProyectos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        showProyectos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         showProyectos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 showProyectosActionPerformed(evt);
@@ -72,7 +72,7 @@ public class frmMenu extends javax.swing.JFrame
         menuTareas.setText("Tareas");
 
         addTareas.setText("Registrar");
-        addTareas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        addTareas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addTareas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addTareasActionPerformed(evt);
@@ -81,7 +81,7 @@ public class frmMenu extends javax.swing.JFrame
         menuTareas.add(addTareas);
 
         showTareas.setText("Mostrar");
-        showTareas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        showTareas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         showTareas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 showTareasActionPerformed(evt);
@@ -94,7 +94,7 @@ public class frmMenu extends javax.swing.JFrame
         menuRecurso.setText("Recursos");
 
         addRecurso.setText("Registrar");
-        addRecurso.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        addRecurso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addRecurso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addRecursoActionPerformed(evt);
@@ -103,7 +103,7 @@ public class frmMenu extends javax.swing.JFrame
         menuRecurso.add(addRecurso);
 
         showRecurso.setText("Mostrar");
-        showRecurso.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        showRecurso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         showRecurso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 showRecursoActionPerformed(evt);
@@ -116,7 +116,7 @@ public class frmMenu extends javax.swing.JFrame
         jMenu3.setText("Informes");
 
         addInforme.setText("Registrar");
-        addInforme.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        addInforme.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addInforme.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addInformeActionPerformed(evt);
@@ -125,7 +125,7 @@ public class frmMenu extends javax.swing.JFrame
         jMenu3.add(addInforme);
 
         showInforme.setText("Mostrar");
-        showInforme.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        showInforme.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         showInforme.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 showInformeActionPerformed(evt);

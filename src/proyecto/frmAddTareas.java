@@ -51,6 +51,7 @@ public class frmAddTareas extends javax.swing.JInternalFrame
         jlbMensaje.setText("-");
 
         jbtPush.setText("Agregar");
+        jbtPush.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jbtPush.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtPushActionPerformed(evt);
@@ -60,6 +61,7 @@ public class frmAddTareas extends javax.swing.JInternalFrame
         jlbReg1.setText("Responsable:");
 
         jbtPop.setText("Eliminar");
+        jbtPop.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jbtPop.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtPopActionPerformed(evt);
@@ -67,6 +69,7 @@ public class frmAddTareas extends javax.swing.JInternalFrame
         });
 
         jbtBack.setText("Regresar");
+        jbtBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jbtBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtBackActionPerformed(evt);
@@ -82,11 +85,13 @@ public class frmAddTareas extends javax.swing.JInternalFrame
         jLabel1.setText("Estado:");
 
         jRadioButton1.setText("En proceso");
+        jRadioButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jlbPrestamo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jlbPrestamo.setText("Tarea");
 
         jRadioButton2.setText("Finalizado");
+        jRadioButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jlbAdd.setText("Registro");
 
@@ -105,10 +110,12 @@ public class frmAddTareas extends javax.swing.JInternalFrame
         jlbEgressDay.setText("Día:");
 
         jcbDiaInicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29" }));
+        jcbDiaInicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jlEgressMonth.setText("Mes:");
 
         jcbMesInicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
+        jcbMesInicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jcbMesInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jcbMesInicioActionPerformed(evt);
@@ -119,9 +126,12 @@ public class frmAddTareas extends javax.swing.JInternalFrame
 
         jlbEntryDay.setText("Día:");
 
+        jcbDiaFin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
         jlbEntryMonth.setText("Mes:");
 
         jcbMesFin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
+        jcbMesFin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jcbMesFin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jcbMesFinActionPerformed(evt);
@@ -129,6 +139,7 @@ public class frmAddTareas extends javax.swing.JInternalFrame
         });
 
         jtaDesc.setColumns(20);
+        jtaDesc.setLineWrap(true);
         jtaDesc.setRows(5);
         jtaDesc.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jtaDesc);
