@@ -241,7 +241,7 @@ public class frmAddProyectos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jbtPushActionPerformed
 
     private void jbtPopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtPopActionPerformed
-        Proyect.pop();
+
     }//GEN-LAST:event_jbtPopActionPerformed
 
     private void jbtBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtBackActionPerformed

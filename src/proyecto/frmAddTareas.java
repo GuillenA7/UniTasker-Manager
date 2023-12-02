@@ -282,7 +282,7 @@ public class frmAddTareas extends javax.swing.JInternalFrame
 
         float fees = Float.parseFloat(jtaDesc.getText());
 
-        prestamoP.push(reg, egressDay, egressMonth, entryDay, entryMonth, fees);
+
         jlbMensaje.setText("Registrado");
 
         limpiarCampos();
