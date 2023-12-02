@@ -21,6 +21,8 @@ public class frmShowProyectos extends javax.swing.JInternalFrame
         jbtClean = new javax.swing.JButton();
         jbtBack = new javax.swing.JButton();
 
+        setClosable(true);
+
         jlbPrestamo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jlbPrestamo.setText("Prestamo");
 

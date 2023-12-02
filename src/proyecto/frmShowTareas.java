@@ -30,6 +30,8 @@ public class frmShowTareas extends javax.swing.JInternalFrame {
         jScrollPane1 = new java.awt.ScrollPane();
         jtaResultado = new java.awt.TextArea();
 
+        setClosable(true);
+
         jbtClean.setText("Limpiar");
         jbtClean.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

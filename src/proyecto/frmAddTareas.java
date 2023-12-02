@@ -33,7 +33,6 @@ public class frmAddTareas extends javax.swing.JInternalFrame
         jlbReg = new javax.swing.JLabel();
         jtfName = new javax.swing.JTextField();
         jlbFee = new javax.swing.JLabel();
-        jtaDesc = new javax.swing.JTextField();
         jlbEgress = new javax.swing.JLabel();
         jlbEgressDay = new javax.swing.JLabel();
         jcbDiaInicio = new javax.swing.JComboBox<>();
@@ -44,6 +43,8 @@ public class frmAddTareas extends javax.swing.JInternalFrame
         jcbDiaFin = new javax.swing.JComboBox<>();
         jlbEntryMonth = new javax.swing.JLabel();
         jcbMesFin = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jtaDesc = new javax.swing.JTextArea();
 
         setClosable(true);
 
@@ -127,6 +128,11 @@ public class frmAddTareas extends javax.swing.JInternalFrame
             }
         });
 
+        jtaDesc.setColumns(20);
+        jtaDesc.setRows(5);
+        jtaDesc.setWrapStyleWord(true);
+        jScrollPane1.setViewportView(jtaDesc);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -136,33 +142,6 @@ public class frmAddTareas extends javax.swing.JInternalFrame
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jlbFee))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jcbDiaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(27, 27, 27)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jlEgressMonth)
-                                            .addComponent(jcbMesInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(jlbEgress)
-                                    .addComponent(jlbEntryDay))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jlbEntry)
-                                    .addComponent(jcbDiaFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jlbEgressDay))
-                                .addGap(8, 8, 8)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jlbEntryMonth)
-                                    .addComponent(jcbMesFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jtaDesc, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jlbReg)
-                                .addGap(18, 18, 18)
-                                .addComponent(jtfName, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel1)
@@ -191,7 +170,34 @@ public class frmAddTareas extends javax.swing.JInternalFrame
                                 .addGap(49, 49, 49)
                                 .addComponent(jbtPop)
                                 .addGap(73, 73, 73)
-                                .addComponent(jbtBack)))))
+                                .addComponent(jbtBack))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jcbDiaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(27, 27, 27)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jlEgressMonth)
+                                            .addComponent(jcbMesInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jlbEgress)
+                                    .addComponent(jlbEntryDay))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jlbEntry)
+                                    .addComponent(jcbDiaFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jlbEgressDay))
+                                .addGap(8, 8, 8)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jlbEntryMonth)
+                                    .addComponent(jcbMesFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jlbReg)
+                                .addGap(18, 18, 18)
+                                .addComponent(jtfName, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -208,8 +214,8 @@ public class frmAddTareas extends javax.swing.JInternalFrame
                 .addGap(18, 18, 18)
                 .addComponent(jlbFee)
                 .addGap(18, 18, 18)
-                .addComponent(jtaDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jlbEgress)
@@ -415,6 +421,7 @@ public class frmAddTareas extends javax.swing.JInternalFrame
     private javax.swing.JLabel jLabel1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbtBack;
     private javax.swing.JButton jbtPop;
     private javax.swing.JButton jbtPush;
@@ -434,7 +441,7 @@ public class frmAddTareas extends javax.swing.JInternalFrame
     private javax.swing.JLabel jlbPrestamo;
     private javax.swing.JLabel jlbReg;
     private javax.swing.JLabel jlbReg1;
-    private javax.swing.JTextField jtaDesc;
+    private javax.swing.JTextArea jtaDesc;
     private javax.swing.JTextField jtfName;
     private javax.swing.JTextField jtfRes;
     // End of variables declaration//GEN-END:variables
