@@ -24,7 +24,7 @@ public class frmShowProyectos extends javax.swing.JInternalFrame
         setClosable(true);
 
         jlbPrestamo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jlbPrestamo.setText("Prestamo");
+        jlbPrestamo.setText("Proyectos");
 
         jlbShow.setText("Mostrar");
 
@@ -60,7 +60,7 @@ public class frmShowProyectos extends javax.swing.JInternalFrame
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(172, 172, 172)
                                 .addComponent(jlbShow)))
-                        .addGap(0, 141, Short.MAX_VALUE))
+                        .addGap(0, 137, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))

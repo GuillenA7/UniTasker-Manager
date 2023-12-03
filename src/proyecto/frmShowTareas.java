@@ -47,7 +47,7 @@ public class frmShowTareas extends javax.swing.JInternalFrame {
         });
 
         jlbLibro.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jlbLibro.setText("Libros");
+        jlbLibro.setText("Tareas");
 
         jlbShow.setText("Mostrar");
 
@@ -67,7 +67,7 @@ public class frmShowTareas extends javax.swing.JInternalFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(174, 174, 174)
                                 .addComponent(jlbShow)))
-                        .addGap(0, 160, Short.MAX_VALUE))
+                        .addGap(0, 155, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
