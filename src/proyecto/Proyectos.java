@@ -11,7 +11,7 @@ public class Proyectos
     private int diafin;
     private String mesfin;
 
-    public Proyectos(String nombre, String descripcion, int diainicio, String mesinicio, int diafin, String mesfin, boolean estado)
+    public Proyectos(String nombre, String descripcion)
     {
         this.nombre = nombre;
         this.descripcion = descripcion;
