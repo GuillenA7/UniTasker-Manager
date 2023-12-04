@@ -2,12 +2,13 @@ package proyecto;
 
 import java.awt.event.KeyEvent;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 
 public class frmAddRecursos extends javax.swing.JInternalFrame
 {
 
     private frmMenu menu;
-    Recursos prestamoP = new Recursos();
+    Recursos Recurso = new Recursos();
     
     public frmAddRecursos()
     {
@@ -28,19 +29,19 @@ public class frmAddRecursos extends javax.swing.JInternalFrame
         jlbAdd = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jlbReg = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jtfReg = new javax.swing.JTextField();
+        jtfRes = new javax.swing.JTextField();
+        jtfName = new javax.swing.JTextField();
         jlbFee = new javax.swing.JLabel();
         jlbEgress = new javax.swing.JLabel();
         jlbEgressDay = new javax.swing.JLabel();
-        jcbEgressDay = new javax.swing.JComboBox<>();
+        jcbDiaInicio = new javax.swing.JComboBox<>();
         jlEgressMonth = new javax.swing.JLabel();
-        jcbEgressMonth = new javax.swing.JComboBox<>();
+        jcbMesInicio = new javax.swing.JComboBox<>();
         jlbEntry = new javax.swing.JLabel();
         jlbEntryDay = new javax.swing.JLabel();
-        jcbEntryDay = new javax.swing.JComboBox<>();
+        jcbDiaFin = new javax.swing.JComboBox<>();
         jlbEntryMonth = new javax.swing.JLabel();
-        jcbEntryMonth = new javax.swing.JComboBox<>();
+        jcbMesFin = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtaDesc = new javax.swing.JTextArea();
 
@@ -89,9 +90,9 @@ public class frmAddRecursos extends javax.swing.JInternalFrame
 
         jlbReg.setText("Nombre:");
 
-        jtfReg.addKeyListener(new java.awt.event.KeyAdapter() {
+        jtfName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                jtfRegKeyTyped(evt);
+                jtfNameKeyTyped(evt);
             }
         });
 
@@ -101,16 +102,16 @@ public class frmAddRecursos extends javax.swing.JInternalFrame
 
         jlbEgressDay.setText("Día:");
 
-        jcbEgressDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29" }));
-        jcbEgressDay.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jcbDiaInicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29" }));
+        jcbDiaInicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jlEgressMonth.setText("Mes:");
 
-        jcbEgressMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
-        jcbEgressMonth.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jcbEgressMonth.addActionListener(new java.awt.event.ActionListener() {
+        jcbMesInicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
+        jcbMesInicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jcbMesInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jcbEgressMonthActionPerformed(evt);
+                jcbMesInicioActionPerformed(evt);
             }
         });
 
@@ -118,15 +119,15 @@ public class frmAddRecursos extends javax.swing.JInternalFrame
 
         jlbEntryDay.setText("Día:");
 
-        jcbEntryDay.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jcbDiaFin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jlbEntryMonth.setText("Mes:");
 
-        jcbEntryMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
-        jcbEntryMonth.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jcbEntryMonth.addActionListener(new java.awt.event.ActionListener() {
+        jcbMesFin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
+        jcbMesFin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jcbMesFin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jcbEntryMonthActionPerformed(evt);
+                jcbMesFinActionPerformed(evt);
             }
         });
 
@@ -151,26 +152,26 @@ public class frmAddRecursos extends javax.swing.JInternalFrame
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jcbEgressDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jcbDiaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(27, 27, 27)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(jlEgressMonth)
-                                                    .addComponent(jcbEgressMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                    .addComponent(jcbMesInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                             .addComponent(jlbEgress)
                                             .addComponent(jlbEntryDay))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jlbEntry)
-                                            .addComponent(jcbEntryDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jcbDiaFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jlbEgressDay))
                                         .addGap(8, 8, 8)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jlbEntryMonth)
-                                            .addComponent(jcbEntryMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(jcbMesFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addComponent(jlbReg)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jtfReg, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jtfName, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel1)
                                         .addGap(18, 18, 18)
@@ -180,7 +181,7 @@ public class frmAddRecursos extends javax.swing.JInternalFrame
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel2)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jTextField1))))
+                                        .addComponent(jtfRes))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(65, 65, 65)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,7 +215,7 @@ public class frmAddRecursos extends javax.swing.JInternalFrame
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlbReg)
-                    .addComponent(jtfReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jlbFee)
                 .addGap(18, 18, 18)
@@ -229,19 +230,19 @@ public class frmAddRecursos extends javax.swing.JInternalFrame
                             .addComponent(jlbEntryDay))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jcbEgressDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jcbEgressMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jcbDiaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jcbMesInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(jlbEntryMonth)
                             .addGap(18, 18, 18)
-                            .addComponent(jcbEntryMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jcbMesFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(jlbEntry)
                             .addGap(18, 18, 18)
                             .addComponent(jlbEgressDay)
                             .addGap(18, 18, 18)
-                            .addComponent(jcbEntryDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jcbDiaFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
@@ -251,7 +252,7 @@ public class frmAddRecursos extends javax.swing.JInternalFrame
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtfRes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jlbMensaje)
                 .addGap(18, 18, 18)
@@ -266,18 +267,32 @@ public class frmAddRecursos extends javax.swing.JInternalFrame
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbtPushActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtPushActionPerformed
-        int reg = Integer.parseInt(jtfReg.getText());
+        // Obtener datos de los campos de texto y áreas de texto
+        String nombre = jtfName.getText();
+        String descripcion = jtaDesc.getText();
+        String fechaInicioDia = (String) jcbDiaInicio.getSelectedItem();
+        String fechaInicioMes = (String) jcbMesInicio.getSelectedItem();
+        String fechaFinDia = (String) jcbMesInicio.getSelectedItem();
+        String fechaFinMes = (String) jcbMesFin.getSelectedItem();
+        boolean estado = true;
+        // Crear una instancia de Proyecto con los datos obtenidos
+        Recursos Recurso = new Recursos();
 
-        int egressDay = Integer.parseInt(jcbEgressDay.getSelectedItem().toString());
-        String egressMonth = jcbEgressMonth.getSelectedItem().toString();
-        int entryDay = Integer.parseInt(jcbEntryDay.getSelectedItem().toString());
-        String entryMonth = jcbEntryMonth.getSelectedItem().toString();
+        // Manipular las fechas según sea necesario y guardarlas en el objeto Proyecto
+        // Ejemplo: nuevoProyecto.setFechaInicio(fechaInicioDia + "/" + fechaInicioMes);
+        // Ejemplo: nuevoProyecto.setFechaFin(fechaFinDia + "/" + fechaFinMes);
 
-        float fees = Float.parseFloat(jtaDesc.getText());
+        // Aquí podrías guardar el objeto Proyecto en tu sistema o hacer lo necesario con los datos
+        // Por ejemplo, podrías añadirlo a una lista de proyectos, enviarlo a una base de datos, etc.
 
+        // Ejemplo de cómo mostrar los datos para verificar:
+        JOptionPane.showMessageDialog(null, "Tarea agregada");
+        // Mostrar las fechas de inicio y fin si las has manipulado y almacenado en el objeto Proyecto
 
-        jlbMensaje.setText("Registrado");
-
+        // Aquí podrías realizar cualquier acción adicional que necesites después de guardar el proyecto
+        // Por ejemplo, cerrar el formulario, actualizar la interfaz, etc.
+        
+        // Limpiar los campos del formulario después de agregar el proyecto
         limpiarCampos();
     }//GEN-LAST:event_jbtPushActionPerformed
 
@@ -289,7 +304,7 @@ public class frmAddRecursos extends javax.swing.JInternalFrame
         this.dispose();
     }//GEN-LAST:event_jbtBackActionPerformed
 
-    private void jtfRegKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfRegKeyTyped
+    private void jtfNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfNameKeyTyped
         int size = 8;
         char charac = evt.getKeyChar();
         jlbMensaje.setVisible(false);
@@ -306,7 +321,7 @@ public class frmAddRecursos extends javax.swing.JInternalFrame
                 jlbMensaje.setText("Solo capturar números.");
             }
 
-            if(jtfReg.getText().length() >= size && charac != KeyEvent.VK_ENTER)
+            if(jtfName.getText().length() >= size && charac != KeyEvent.VK_ENTER)
             {
                 getToolkit().beep();
                 evt.consume();
@@ -314,9 +329,9 @@ public class frmAddRecursos extends javax.swing.JInternalFrame
                 jlbMensaje.setText("Máximo 8 dígitos.");
             }
         }
-    }//GEN-LAST:event_jtfRegKeyTyped
+    }//GEN-LAST:event_jtfNameKeyTyped
 
-    private void jcbEgressMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbEgressMonthActionPerformed
+    private void jcbMesInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbMesInicioActionPerformed
         DefaultComboBoxModel egress = new DefaultComboBoxModel();
         egress.addElement("1");
         egress.addElement("2");
@@ -347,7 +362,7 @@ public class frmAddRecursos extends javax.swing.JInternalFrame
         egress.addElement("27");
         egress.addElement("28");
         egress.addElement("29");
-        switch(jcbEgressMonth.getSelectedIndex())
+        switch(jcbMesInicio.getSelectedIndex())
         {
             case 0: case 2: case 4: case 6: case 7: case 9: case 11:
             egress.addElement("30");
@@ -358,10 +373,10 @@ public class frmAddRecursos extends javax.swing.JInternalFrame
             break;
 
         }
-        jcbEgressDay.setModel(egress);
-    }//GEN-LAST:event_jcbEgressMonthActionPerformed
+        jcbDiaInicio.setModel(egress);
+    }//GEN-LAST:event_jcbMesInicioActionPerformed
 
-    private void jcbEntryMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbEntryMonthActionPerformed
+    private void jcbMesFinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbMesFinActionPerformed
         DefaultComboBoxModel entry = new DefaultComboBoxModel();
         entry.addElement("1");
         entry.addElement("2");
@@ -392,7 +407,7 @@ public class frmAddRecursos extends javax.swing.JInternalFrame
         entry.addElement("27");
         entry.addElement("28");
         entry.addElement("29");
-        switch(jcbEntryMonth.getSelectedIndex())
+        switch(jcbMesFin.getSelectedIndex())
         {
             case 0: case 2: case 4: case 6: case 7: case 9: case 11:
             entry.addElement("30");
@@ -403,17 +418,17 @@ public class frmAddRecursos extends javax.swing.JInternalFrame
             break;
 
         }
-        jcbEntryDay.setModel(entry);
-    }//GEN-LAST:event_jcbEntryMonthActionPerformed
+        jcbDiaFin.setModel(entry);
+    }//GEN-LAST:event_jcbMesFinActionPerformed
 
     public void limpiarCampos()
     {
         jtaDesc.setText("");
-        jtfReg.setText("");
-        jcbEgressDay.setSelectedIndex(1);
-        jcbEgressMonth.setSelectedIndex(1);
-        jcbEntryDay.setSelectedIndex(1);
-        jcbEntryMonth.setSelectedIndex(1);
+        jtfName.setText("");
+        jcbDiaInicio.setSelectedIndex(1);
+        jcbMesInicio.setSelectedIndex(1);
+        jcbDiaFin.setSelectedIndex(1);
+        jcbMesFin.setSelectedIndex(1);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -422,14 +437,13 @@ public class frmAddRecursos extends javax.swing.JInternalFrame
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton jbtBack;
     private javax.swing.JButton jbtPop;
     private javax.swing.JButton jbtPush;
-    private javax.swing.JComboBox<String> jcbEgressDay;
-    private javax.swing.JComboBox<String> jcbEgressMonth;
-    private javax.swing.JComboBox<String> jcbEntryDay;
-    private javax.swing.JComboBox<String> jcbEntryMonth;
+    private javax.swing.JComboBox<String> jcbDiaFin;
+    private javax.swing.JComboBox<String> jcbDiaInicio;
+    private javax.swing.JComboBox<String> jcbMesFin;
+    private javax.swing.JComboBox<String> jcbMesInicio;
     private javax.swing.JLabel jlEgressMonth;
     private javax.swing.JLabel jlbAdd;
     private javax.swing.JLabel jlbEgress;
@@ -442,6 +456,7 @@ public class frmAddRecursos extends javax.swing.JInternalFrame
     private javax.swing.JLabel jlbPrestamo;
     private javax.swing.JLabel jlbReg;
     private javax.swing.JTextArea jtaDesc;
-    private javax.swing.JTextField jtfReg;
+    private javax.swing.JTextField jtfName;
+    private javax.swing.JTextField jtfRes;
     // End of variables declaration//GEN-END:variables
 }

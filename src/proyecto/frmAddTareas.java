@@ -2,12 +2,13 @@ package proyecto;
 
 import java.awt.event.KeyEvent;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 
 public class frmAddTareas extends javax.swing.JInternalFrame
 {
 
     private frmMenu menu;
-    Recursos prestamoP = new Recursos();
+    Tareas tarea = new Tareas();
     
     public frmAddTareas()
     {
@@ -273,23 +274,37 @@ public class frmAddTareas extends javax.swing.JInternalFrame
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbtPushActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtPushActionPerformed
-        int reg = Integer.parseInt(jtfName.getText());
+        // Obtener datos de los campos de texto y áreas de texto
+        String nombre = jtfName.getText();
+        String descripcion = jtaDesc.getText();
+        String fechaInicioDia = (String) jcbDiaInicio.getSelectedItem();
+        String fechaInicioMes = (String) jcbMesInicio.getSelectedItem();
+        String fechaFinDia = (String) jcbDiaFin.getSelectedItem();
+        String fechaFinMes = (String) jcbMesFin.getSelectedItem();
+        boolean estado = true;
+        // Crear una instancia de Proyecto con los datos obtenidos
+        Tareas tarea = new Tareas();
 
-        int egressDay = Integer.parseInt(jcbDiaInicio.getSelectedItem().toString());
-        String egressMonth = jcbMesInicio.getSelectedItem().toString();
-        int entryDay = Integer.parseInt(jcbDiaFin.getSelectedItem().toString());
-        String entryMonth = jcbMesFin.getSelectedItem().toString();
+        // Manipular las fechas según sea necesario y guardarlas en el objeto Proyecto
+        // Ejemplo: nuevoProyecto.setFechaInicio(fechaInicioDia + "/" + fechaInicioMes);
+        // Ejemplo: nuevoProyecto.setFechaFin(fechaFinDia + "/" + fechaFinMes);
 
-        float fees = Float.parseFloat(jtaDesc.getText());
+        // Aquí podrías guardar el objeto Proyecto en tu sistema o hacer lo necesario con los datos
+        // Por ejemplo, podrías añadirlo a una lista de proyectos, enviarlo a una base de datos, etc.
 
+        // Ejemplo de cómo mostrar los datos para verificar:
+        JOptionPane.showMessageDialog(null, "Tarea agregada");
+        // Mostrar las fechas de inicio y fin si las has manipulado y almacenado en el objeto Proyecto
 
-        jlbMensaje.setText("Registrado");
-
+        // Aquí podrías realizar cualquier acción adicional que necesites después de guardar el proyecto
+        // Por ejemplo, cerrar el formulario, actualizar la interfaz, etc.
+        
+        // Limpiar los campos del formulario después de agregar el proyecto
         limpiarCampos();
     }//GEN-LAST:event_jbtPushActionPerformed
 
     private void jbtPopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtPopActionPerformed
-
+limpiarCampos();
     }//GEN-LAST:event_jbtPopActionPerformed
 
     private void jbtBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtBackActionPerformed
