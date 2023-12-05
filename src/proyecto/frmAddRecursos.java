@@ -190,7 +190,7 @@ public class frmAddRecursos extends javax.swing.JInternalFrame
                                         .addComponent(jbtPop)
                                         .addGap(73, 73, 73)
                                         .addComponent(jbtBack)))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 76, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -242,7 +242,7 @@ public class frmAddRecursos extends javax.swing.JInternalFrame
                     .addComponent(jbtPush)
                     .addComponent(jbtPop)
                     .addComponent(jbtBack))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);

@@ -2,22 +2,20 @@ package proyecto;
 
 public class Recursos
 {
-    private int reg;
-    private int egressDay;
-    private String egressMonth;
-    private int entryDay;
-    private String entryMonth;
-    private float fees;
+    private String nombre;
+    private int Dispon;
+    private String proy;
+    private String Ubi;
+    private int Costo;
     private Recursos next;
 
-    public Recursos(int reg, int egressDay, String egressMonth, int entryDay, String entryMonth, float fees)
+    public Recursos(String nombre, int Dispon, String proy, String Ubi, int Costo)
     {
-        this.reg = reg;
-        this.egressDay = egressDay;
-        this.egressMonth = egressMonth;
-        this.entryDay = entryDay;
-        this.entryMonth = entryMonth;
-        this.fees = fees;
+        this.nombre = nombre;
+        this.Dispon = Dispon;
+        this.proy = proy;
+        this.Ubi = Ubi;
+        this.Costo = Costo;
         this.next = null;
     }
 
@@ -26,65 +24,47 @@ public class Recursos
         
     }
 
-    public int getReg()
-    {
-        return reg;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setReg(int reg)
-    {
-        this.reg = reg;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
+
+    public int getDispon() {
+        return Dispon;
+    }
+
+    public void setDispon(int Dispon) {
+        this.Dispon = Dispon;
+    }
+
+    public String getProy() {
+        return proy;
+    }
+
+    public void setProy(String proy) {
+        this.proy = proy;
+    }
+
+    public String getUbi() {
+        return Ubi;
+    }
+
+    public void setUbi(String Ubi) {
+        this.Ubi = Ubi;
+    }
+
+    public int getCosto() {
+        return Costo;
+    }
+
+    public void setCosto(int Costo) {
+        this.Costo = Costo;
+    }
+
     
-    public int getEgressDay()
-    {
-        return egressDay;
-    }
-
-    public void setEgressDay(int egressDay)
-    {
-        this.egressDay = egressDay;
-    }
-
-    public String getEgressMonth()
-    {
-        return egressMonth;
-    }
-
-    public void setEgressMonth(String egressMonth)
-    {
-        this.egressMonth = egressMonth;
-    }
-
-    public int getEntryDay()
-    {
-        return entryDay;
-    }
-
-    public void setEntryDay(int entryDay)
-    {
-        this.entryDay = entryDay;
-    }
-
-    public String getEntryMonth()
-    {
-        return entryMonth;
-    }
-
-    public void setEntryMonth(String entryMonth)
-    {
-        this.entryMonth = entryMonth;
-    }
-
-    public float getFees()
-    {
-        return fees;
-    }
-
-    public void setFees(float fees)
-    {
-        this.fees = fees;
-    }
 
     public Recursos getNext()
     {
