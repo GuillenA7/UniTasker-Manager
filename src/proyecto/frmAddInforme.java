@@ -84,6 +84,7 @@ public class frmAddInforme extends javax.swing.JInternalFrame {
         jLabel4.setText("Informe:");
 
         jTextArea3.setColumns(20);
+        jTextArea3.setLineWrap(true);
         jTextArea3.setRows(5);
         jScrollPane3.setViewportView(jTextArea3);
 
