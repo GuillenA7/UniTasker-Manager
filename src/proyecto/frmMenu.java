@@ -115,7 +115,7 @@ public class frmMenu extends javax.swing.JFrame
 
         menuBarraNavegacion.add(menuTareas);
 
-        menuRecurso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/rocket_launch_icon_251995.png"))); // NOI18N
+        menuRecurso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-mercancía-50.png"))); // NOI18N
         menuRecurso.setText("Recursos");
 
         addRecurso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/square_plus_icon_251998.png"))); // NOI18N

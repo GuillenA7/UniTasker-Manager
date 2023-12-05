@@ -3,19 +3,21 @@ package proyecto;
 public class Recursos
 {
     private String nombre;
-    private int Dispon;
     private String proy;
-    private String Ubi;
+    private int Dispon;
     private int Costo;
+    private String Ubi;
     private Recursos next;
+    private int numNodes;
 
-    public Recursos(String nombre, int Dispon, String proy, String Ubi, int Costo)
+    public Recursos(String nombre, String proy, int Dispon, int Costo, String Ubi)
     {
         this.nombre = nombre;
         this.Dispon = Dispon;
         this.proy = proy;
         this.Ubi = Ubi;
         this.Costo = Costo;
+        this.numNodes = 0;
         this.next = null;
     }
 
@@ -64,15 +66,45 @@ public class Recursos
         this.Costo = Costo;
     }
 
-    
+    public int getNumNodes() {
+        return numNodes;
+    }
 
-    public Recursos getNext()
-    {
+    public void setNumNodes(int numNodes) {
+        this.numNodes = numNodes;
+    }
+    
+    public Recursos getNext() {
         return next;
     }
 
-    public void setNext(Recursos next)
-    {
+    public void setNext(Recursos next) {
         this.next = next;
-    }  
+    }
+    
+    public Recursos[] recorrerPila() {
+        Recursos[] alumnos = new Recursos[numNodes];
+        Recursos aux = next;
+        int i = 0;
+        
+        while(aux != null) {
+            alumnos[i] = aux;
+            aux = aux.getNext();
+            i++;
+        }
+        return alumnos;
+    }
+    
+    public void push (String nombre, String proy, int Dispon, int Costo, String Ubi) {
+        Recursos node = new Recursos(nombre, proy, Dispon, Costo, Ubi);
+        
+        if(next == null)
+            next = node;
+        else {
+            Recursos aux = next;
+            next = node;
+            node.setNext(aux);
+        }
+        numNodes ++;
+    }
 }

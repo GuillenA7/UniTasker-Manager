@@ -98,7 +98,7 @@
         <Menu class="javax.swing.JMenu" name="menuRecurso">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icons/rocket_launch_icon_251995.png"/>
+              <Image iconType="3" name="/icons/icons8-mercanc&#xed;a-50.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Recursos"/>
           </Properties>

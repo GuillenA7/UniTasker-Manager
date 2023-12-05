@@ -37,6 +37,7 @@ public class frmShowTareas extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
         jbtBack.setText("Regresar");
+        jbtBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jbtBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtBackActionPerformed(evt);
@@ -51,6 +52,7 @@ public class frmShowTareas extends javax.swing.JInternalFrame {
         jScrollPane1.add(jtaResultado);
 
         jbtClean.setText("Limpiar");
+        jbtClean.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jbtClean.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtCleanActionPerformed(evt);
