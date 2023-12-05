@@ -1,13 +1,10 @@
 package proyecto;
 
-import java.awt.Graphics;
-import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JDesktopPane;
 
 public class frmMenu extends javax.swing.JFrame
 {
-    private EscritorioPersonalizado escritorio;
     
     private frmIngreso ingreso;
     
@@ -16,9 +13,6 @@ public class frmMenu extends javax.swing.JFrame
         setIconImage(new ImageIcon(getClass().getResource("/icons/Icon.png")).getImage());
         
         initComponents();
-        
-        escritorio = new EscritorioPersonalizado();
-        this.setContentPane(escritorio);
         
         this.ingreso = ingreso;
     }
@@ -30,6 +24,7 @@ public class frmMenu extends javax.swing.JFrame
         jMenu1 = new javax.swing.JMenu();
         jPopupMenu1 = new javax.swing.JPopupMenu();
         jDesktopPane1 = new javax.swing.JDesktopPane();
+        jLabel1 = new javax.swing.JLabel();
         menuBarraNavegacion = new javax.swing.JMenuBar();
         menuAlumnos = new javax.swing.JMenu();
         addProyectos = new javax.swing.JMenuItem();
@@ -51,15 +46,23 @@ public class frmMenu extends javax.swing.JFrame
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu");
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/logo.png"))); // NOI18N
+
+        jDesktopPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 950, Short.MAX_VALUE)
+            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 511, Short.MAX_VALUE)
+            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         menuAlumnos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/storage_file_office_document_documents_extension_folder_icon_256872.png"))); // NOI18N
@@ -183,7 +186,7 @@ public class frmMenu extends javax.swing.JFrame
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jDesktopPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -269,6 +272,7 @@ public class frmMenu extends javax.swing.JFrame
     private javax.swing.JMenuItem addRecurso;
     private javax.swing.JMenuItem addTareas;
     public javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JPopupMenu jPopupMenu1;

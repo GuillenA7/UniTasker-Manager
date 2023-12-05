@@ -18,6 +18,16 @@ public class frmAddProyectos extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jlbAlumnos = new javax.swing.JLabel();
+        jlbEntry = new javax.swing.JLabel();
+        jlbEgress = new javax.swing.JLabel();
+        jlbName = new javax.swing.JLabel();
+        jlbEgressDay = new javax.swing.JLabel();
+        jtfName = new javax.swing.JTextField();
+        jcbDiaInicio = new javax.swing.JComboBox<>();
+        jlbLastname = new javax.swing.JLabel();
+        jlEgressMonth = new javax.swing.JLabel();
         jlbEntryDay = new javax.swing.JLabel();
         jbtPush = new javax.swing.JButton();
         jcbDiaFin = new javax.swing.JComboBox<>();
@@ -28,22 +38,31 @@ public class frmAddProyectos extends javax.swing.JInternalFrame {
         jlbMensaje = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jtaDesc = new javax.swing.JTextArea();
-        jlbAlumnos = new javax.swing.JLabel();
-        jlbEgress = new javax.swing.JLabel();
-        jlbName = new javax.swing.JLabel();
-        jlbEgressDay = new javax.swing.JLabel();
-        jtfName = new javax.swing.JTextField();
-        jcbDiaInicio = new javax.swing.JComboBox<>();
-        jlbLastname = new javax.swing.JLabel();
-        jlEgressMonth = new javax.swing.JLabel();
-        jlbStatus = new javax.swing.JLabel();
         jcbMesInicio = new javax.swing.JComboBox<>();
-        jrbAct = new javax.swing.JRadioButton();
-        jlbEntry = new javax.swing.JLabel();
-        jrbInact = new javax.swing.JRadioButton();
 
         setClosable(true);
         setTitle("Agregar Proyecto");
+        setPreferredSize(new java.awt.Dimension(500, 500));
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+
+        jlbAlumnos.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jlbAlumnos.setText("Registrar proyecto");
+
+        jlbEntry.setText("Fecha de finalizaccion");
+
+        jlbEgress.setText("Fecha de inicio");
+
+        jlbName.setText("Nombre:");
+
+        jlbEgressDay.setText("Día:");
+
+        jcbDiaInicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29" }));
+        jcbDiaInicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        jlbLastname.setText("Descripción:");
+
+        jlEgressMonth.setText("Mes:");
 
         jlbEntryDay.setText("Día:");
 
@@ -91,24 +110,6 @@ public class frmAddProyectos extends javax.swing.JInternalFrame {
         jtaDesc.setWrapStyleWord(true);
         jScrollPane2.setViewportView(jtaDesc);
 
-        jlbAlumnos.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jlbAlumnos.setText("Registrar proyecto");
-
-        jlbEgress.setText("Fecha de inicio");
-
-        jlbName.setText("Nombre:");
-
-        jlbEgressDay.setText("Día:");
-
-        jcbDiaInicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29" }));
-        jcbDiaInicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jlbLastname.setText("Descripción:");
-
-        jlEgressMonth.setText("Mes:");
-
-        jlbStatus.setText("Estado:");
-
         jcbMesInicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
         jcbMesInicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jcbMesInicio.addActionListener(new java.awt.event.ActionListener() {
@@ -117,79 +118,70 @@ public class frmAddProyectos extends javax.swing.JInternalFrame {
             }
         });
 
-        jrbAct.setText("Activo");
-        jrbAct.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jlbEntry.setText("Fecha de finalizaccion");
-
-        jrbInact.setText("Inactivo");
-        jrbInact.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jcbDiaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jlbEntryDay))
-                                .addGap(27, 27, 27)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jlEgressMonth)
-                                    .addComponent(jcbMesInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jlbEgress))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jlbEntry)
-                            .addComponent(jcbDiaFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jlbEgressDay))
-                        .addGap(8, 8, 8)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jlbEntryMonth)
-                            .addComponent(jcbMesFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(145, 145, 145)
-                                .addComponent(jlbAlumnos))
-                            .addComponent(jlbStatus)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jrbAct)
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jbtPush)
-                                        .addGap(33, 33, 33)
-                                        .addComponent(jbtPop)
-                                        .addGap(45, 45, 45)
-                                        .addComponent(jbtBack))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(140, 140, 140)
-                                        .addComponent(jlbMensaje))
-                                    .addComponent(jrbInact))))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jlbLastname)
-                        .addGap(294, 411, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jlbName)
-                        .addGap(36, 36, 36)
-                        .addComponent(jtfName))
-                    .addComponent(jScrollPane2))
-                .addContainerGap())
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(145, 145, 145)
+                        .addComponent(jlbAlumnos)
+                        .addContainerGap(143, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jlbLastname)
+                                .addGap(0, 411, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jlbName)
+                                .addGap(36, 36, 36)
+                                .addComponent(jtfName))
+                            .addComponent(jScrollPane2)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jbtPush)
+                                                .addGap(33, 33, 33)
+                                                .addComponent(jbtPop)
+                                                .addGap(45, 45, 45)
+                                                .addComponent(jbtBack))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(140, 140, 140)
+                                                .addComponent(jlbMensaje))))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jcbDiaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jlbEntryDay))
+                                                .addGap(27, 27, 27)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jlEgressMonth)
+                                                    .addComponent(jcbMesInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(jlbEgress))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jlbEntry)
+                                            .addComponent(jcbDiaFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jlbEgressDay))))
+                                .addGap(8, 8, 8)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jlbEntryMonth)
+                                    .addComponent(jcbMesFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap())))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jlbAlumnos)
                 .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jlbName))
                 .addGap(18, 18, 18)
@@ -197,43 +189,39 @@ public class frmAddProyectos extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jlbEgress)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jlEgressMonth)
                             .addComponent(jlbEntryDay))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jcbDiaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jcbMesInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(jlbEntryMonth)
                             .addGap(18, 18, 18)
                             .addComponent(jcbMesFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(jlbEntry)
                             .addGap(18, 18, 18)
                             .addComponent(jlbEgressDay)
                             .addGap(18, 18, 18)
                             .addComponent(jcbDiaFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
-                .addComponent(jlbStatus)
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jrbAct)
-                    .addComponent(jrbInact))
-                .addGap(18, 18, 18)
                 .addComponent(jlbMensaje)
                 .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbtPush)
                     .addComponent(jbtPop)
                     .addComponent(jbtBack))
-                .addGap(115, 115, 115))
+                .addGap(189, 189, 189))
         );
+
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -263,13 +251,13 @@ public class frmAddProyectos extends javax.swing.JInternalFrame {
 
         // Aquí podrías realizar cualquier acción adicional que necesites después de guardar el proyecto
         // Por ejemplo, cerrar el formulario, actualizar la interfaz, etc.
-        
+
         // Limpiar los campos del formulario después de agregar el proyecto
         limpiarCampos();
     }//GEN-LAST:event_jbtPushActionPerformed
 
     private void jbtPopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtPopActionPerformed
-    limpiarCampos();
+        limpiarCampos();
     }//GEN-LAST:event_jbtPopActionPerformed
 
     private void jbtBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtBackActionPerformed
@@ -377,6 +365,7 @@ public class frmAddProyectos extends javax.swing.JInternalFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton jbtBack;
     private javax.swing.JButton jbtPop;
@@ -395,9 +384,6 @@ public class frmAddProyectos extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jlbLastname;
     private javax.swing.JLabel jlbMensaje;
     private javax.swing.JLabel jlbName;
-    private javax.swing.JLabel jlbStatus;
-    private javax.swing.JRadioButton jrbAct;
-    private javax.swing.JRadioButton jrbInact;
     private javax.swing.JTextArea jtaDesc;
     private javax.swing.JTextField jtfName;
     // End of variables declaration//GEN-END:variables

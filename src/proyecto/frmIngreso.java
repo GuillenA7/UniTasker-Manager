@@ -45,7 +45,7 @@ public class frmIngreso extends javax.swing.JFrame
         setTitle("Log In");
         setPreferredSize(new java.awt.Dimension(300, 300));
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(204, 153, 255));
 
         jlbTitulo.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jlbTitulo.setText("Iniciar sesión");
