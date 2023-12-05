@@ -43,6 +43,7 @@ public class frmAddProyectos extends javax.swing.JInternalFrame {
         jrbInact = new javax.swing.JRadioButton();
 
         setClosable(true);
+        setTitle("Agregar Proyecto");
 
         jlbEntryDay.setText("Día:");
 

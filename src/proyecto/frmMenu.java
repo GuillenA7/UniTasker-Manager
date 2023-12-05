@@ -1,13 +1,24 @@
 package proyecto;
 
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JDesktopPane;
+
 public class frmMenu extends javax.swing.JFrame
 {
-
+    private EscritorioPersonalizado escritorio;
+    
     private frmIngreso ingreso;
     
     public frmMenu(String usr, frmIngreso ingreso)
     {
+        setIconImage(new ImageIcon(getClass().getResource("/icons/Icon.png")).getImage());
+        
         initComponents();
+        
+        escritorio = new EscritorioPersonalizado();
+        this.setContentPane(escritorio);
         
         this.ingreso = ingreso;
     }
@@ -17,6 +28,7 @@ public class frmMenu extends javax.swing.JFrame
     private void initComponents() {
 
         jMenu1 = new javax.swing.JMenu();
+        jPopupMenu1 = new javax.swing.JPopupMenu();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         menuBarraNavegacion = new javax.swing.JMenuBar();
         menuAlumnos = new javax.swing.JMenu();
@@ -31,25 +43,30 @@ public class frmMenu extends javax.swing.JFrame
         jMenu3 = new javax.swing.JMenu();
         addInforme = new javax.swing.JMenuItem();
         showInforme = new javax.swing.JMenuItem();
+        Salir = new javax.swing.JMenu();
+        jSalir = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Menu");
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 988, Short.MAX_VALUE)
+            .addGap(0, 950, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 765, Short.MAX_VALUE)
+            .addGap(0, 511, Short.MAX_VALUE)
         );
 
+        menuAlumnos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/storage_file_office_document_documents_extension_folder_icon_256872.png"))); // NOI18N
         menuAlumnos.setText("Proyectos");
 
-        addProyectos.setText("Registrar");
+        addProyectos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/square_plus_icon_251998.png"))); // NOI18N
+        addProyectos.setText("Nuevo Proyecto");
         addProyectos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addProyectos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,6 +75,7 @@ public class frmMenu extends javax.swing.JFrame
         });
         menuAlumnos.add(addProyectos);
 
+        showProyectos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/eye_line_icon_235423.png"))); // NOI18N
         showProyectos.setText("Mostrar");
         showProyectos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         showProyectos.addActionListener(new java.awt.event.ActionListener() {
@@ -69,9 +87,11 @@ public class frmMenu extends javax.swing.JFrame
 
         menuBarraNavegacion.add(menuAlumnos);
 
+        menuTareas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/document_file_icon_256882.png"))); // NOI18N
         menuTareas.setText("Tareas");
 
-        addTareas.setText("Registrar");
+        addTareas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/square_plus_icon_251998.png"))); // NOI18N
+        addTareas.setText("Agregar Tarea");
         addTareas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addTareas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,6 +100,7 @@ public class frmMenu extends javax.swing.JFrame
         });
         menuTareas.add(addTareas);
 
+        showTareas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/eye_line_icon_235423.png"))); // NOI18N
         showTareas.setText("Mostrar");
         showTareas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         showTareas.addActionListener(new java.awt.event.ActionListener() {
@@ -91,9 +112,11 @@ public class frmMenu extends javax.swing.JFrame
 
         menuBarraNavegacion.add(menuTareas);
 
+        menuRecurso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/rocket_launch_icon_251995.png"))); // NOI18N
         menuRecurso.setText("Recursos");
 
-        addRecurso.setText("Registrar");
+        addRecurso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/square_plus_icon_251998.png"))); // NOI18N
+        addRecurso.setText("Agregar Recursos");
         addRecurso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addRecurso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,6 +125,7 @@ public class frmMenu extends javax.swing.JFrame
         });
         menuRecurso.add(addRecurso);
 
+        showRecurso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/eye_line_icon_235423.png"))); // NOI18N
         showRecurso.setText("Mostrar");
         showRecurso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         showRecurso.addActionListener(new java.awt.event.ActionListener() {
@@ -113,9 +137,11 @@ public class frmMenu extends javax.swing.JFrame
 
         menuBarraNavegacion.add(menuRecurso);
 
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/notes_icon_251990.png"))); // NOI18N
         jMenu3.setText("Informes");
 
-        addInforme.setText("Registrar");
+        addInforme.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/square_plus_icon_251998.png"))); // NOI18N
+        addInforme.setText("Crear Informe");
         addInforme.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addInforme.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,6 +150,7 @@ public class frmMenu extends javax.swing.JFrame
         });
         jMenu3.add(addInforme);
 
+        showInforme.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/eye_line_icon_235423.png"))); // NOI18N
         showInforme.setText("Mostrar");
         showInforme.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         showInforme.addActionListener(new java.awt.event.ActionListener() {
@@ -135,16 +162,28 @@ public class frmMenu extends javax.swing.JFrame
 
         menuBarraNavegacion.add(jMenu3);
 
+        Salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/menu_icon_251951.png"))); // NOI18N
+        Salir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        jSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/square_delete_remove_icon_251967.png"))); // NOI18N
+        jSalir.setText("Salir");
+        jSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jSalirActionPerformed(evt);
+            }
+        });
+        Salir.add(jSalir);
+
+        menuBarraNavegacion.add(Salir);
+
         setJMenuBar(menuBarraNavegacion);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jDesktopPane1)
-                .addContainerGap())
+            .addComponent(jDesktopPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -219,7 +258,12 @@ public class frmMenu extends javax.swing.JFrame
         recursos.show();
     }//GEN-LAST:event_showInformeActionPerformed
 
+    private void jSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jSalirActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu Salir;
     private javax.swing.JMenuItem addInforme;
     private javax.swing.JMenuItem addProyectos;
     private javax.swing.JMenuItem addRecurso;
@@ -227,6 +271,8 @@ public class frmMenu extends javax.swing.JFrame
     public javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JMenuItem jSalir;
     private javax.swing.JMenu menuAlumnos;
     private javax.swing.JMenuBar menuBarraNavegacion;
     private javax.swing.JMenu menuRecurso;
@@ -236,4 +282,8 @@ public class frmMenu extends javax.swing.JFrame
     private javax.swing.JMenuItem showRecurso;
     private javax.swing.JMenuItem showTareas;
     // End of variables declaration//GEN-END:variables
+
+    private JDesktopPane JDesktopPane() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

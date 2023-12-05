@@ -1,6 +1,7 @@
 package proyecto;
 
 import java.awt.event.KeyEvent;
+import javax.swing.ImageIcon;
 
 public class frmIngreso extends javax.swing.JFrame
 {
@@ -10,6 +11,9 @@ public class frmIngreso extends javax.swing.JFrame
     
     public frmIngreso()
     {
+        
+        setIconImage(new ImageIcon(getClass().getResource("/icons/Icon.png")).getImage());
+        
         initComponents();
         
         for(i = 0; i < size; i++)
@@ -22,11 +26,12 @@ public class frmIngreso extends javax.swing.JFrame
         aUsuarios[4] = new Usuario("user05", "12345");
         count = 5;
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jlbTitulo = new javax.swing.JLabel();
         jlbUsuario = new javax.swing.JLabel();
         jlbContrasena = new javax.swing.JLabel();
@@ -38,14 +43,19 @@ public class frmIngreso extends javax.swing.JFrame
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Log In");
+        setPreferredSize(new java.awt.Dimension(300, 300));
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
         jlbTitulo.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jlbTitulo.setText("Inicio de sesión");
+        jlbTitulo.setText("Iniciar sesión");
 
         jlbUsuario.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jlbUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/user_icon_251962.png"))); // NOI18N
         jlbUsuario.setText("Usuario:");
 
         jlbContrasena.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jlbContrasena.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/lock_padlock_icon_251975.png"))); // NOI18N
         jlbContrasena.setText("Contraseña:");
 
         jpfContrasena.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -80,65 +90,69 @@ public class frmIngreso extends javax.swing.JFrame
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jlbUsuario)
-                        .addGap(39, 39, 39)
-                        .addComponent(jtfUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(43, 43, 43)
-                                .addComponent(jlbTitulo))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jlbContrasena)
-                                .addGap(18, 18, 18)
-                                .addComponent(jpfContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlbMensaje, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jlbUsuario)
+                                .addGap(39, 39, 39)
+                                .addComponent(jtfUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jlbContrasena)
+                        .addGap(18, 18, 18)
+                        .addComponent(jpfContrasena, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(95, 95, 95)
+                        .addComponent(jlbTitulo)
+                        .addGap(0, 71, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
                 .addComponent(jbnIngresar)
-                .addGap(38, 38, 38)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jbnSalir)
-                .addGap(32, 32, 32))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jlbMensaje, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(42, 42, 42))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jlbTitulo)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlbUsuario)
                     .addComponent(jtfUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlbContrasena)
                     .addComponent(jpfContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jlbMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbnIngresar)
                     .addComponent(jbnSalir))
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
+
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jpfContrasenaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jpfContrasenaKeyTyped
+        if(evt.getKeyChar() == KeyEvent.VK_ENTER)
+        jbnIngresar.requestFocus();
+    }//GEN-LAST:event_jpfContrasenaKeyTyped
 
     private void jbnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbnIngresarActionPerformed
         // obtener textos de usuario y contraseña
@@ -169,11 +183,6 @@ public class frmIngreso extends javax.swing.JFrame
     private void jbnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbnSalirActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jbnSalirActionPerformed
-
-    private void jpfContrasenaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jpfContrasenaKeyTyped
-        if(evt.getKeyChar() == KeyEvent.VK_ENTER)
-            jbnIngresar.requestFocus();
-    }//GEN-LAST:event_jpfContrasenaKeyTyped
 
     public static void main(String args[])
     {
@@ -211,6 +220,7 @@ public class frmIngreso extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbnIngresar;
     private javax.swing.JButton jbnSalir;
     private javax.swing.JLabel jlbContrasena;
