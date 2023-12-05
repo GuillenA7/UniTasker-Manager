@@ -1,5 +1,8 @@
 package proyecto;
 
+import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
+
 public class frmAddInforme extends javax.swing.JInternalFrame {
 
     public frmAddInforme() {
@@ -20,7 +23,7 @@ public class frmAddInforme extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jbtPush = new javax.swing.JButton();
         jbtClean = new javax.swing.JButton();
         jbtBack = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
@@ -43,8 +46,8 @@ public class frmAddInforme extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Proyecto Asociado:");
 
-        jButton1.setText("Guardar");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbtPush.setText("Guardar");
+        jbtPush.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jbtClean.setText("Limpiar");
         jbtClean.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -59,6 +62,12 @@ public class frmAddInforme extends javax.swing.JInternalFrame {
         jbtBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtBackActionPerformed(evt);
+            }
+        });
+
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1KeyTyped(evt);
             }
         });
 
@@ -84,7 +93,7 @@ public class frmAddInforme extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(71, 71, 71)
-                .addComponent(jButton1)
+                .addComponent(jbtPush)
                 .addGap(46, 46, 46)
                 .addComponent(jbtClean)
                 .addGap(32, 32, 32)
@@ -141,7 +150,7 @@ public class frmAddInforme extends javax.swing.JInternalFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jbtClean)
                             .addComponent(jbtBack)
-                            .addComponent(jButton1))
+                            .addComponent(jbtPush))
                         .addGap(25, 25, 25))))
         );
 
@@ -158,9 +167,22 @@ public class frmAddInforme extends javax.swing.JInternalFrame {
         this.dispose();
     }//GEN-LAST:event_jbtBackActionPerformed
 
+    private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
+    char charac = evt.getKeyChar();
+
+if (charac == KeyEvent.VK_ENTER) {
+    jbtPush.requestFocus();
+} else {
+    if (!Character.isLetter(charac)) { // Verifica si el carácter ingresado no es una letra
+        getToolkit().beep();
+        evt.consume();
+        JOptionPane.showMessageDialog(null, "Solo capturar letras");
+    }
+}
+    }//GEN-LAST:event_jTextField1KeyTyped
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -174,6 +196,7 @@ public class frmAddInforme extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JButton jbtBack;
     private javax.swing.JButton jbtClean;
+    private javax.swing.JButton jbtPush;
     private javax.swing.JLabel jlbAdd;
     private javax.swing.JLabel jlbAlumnos1;
     // End of variables declaration//GEN-END:variables

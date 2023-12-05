@@ -82,19 +82,6 @@ public class Recursos
         this.next = next;
     }
     
-    public Recursos[] recorrerPila() {
-        Recursos[] alumnos = new Recursos[numNodes];
-        Recursos aux = next;
-        int i = 0;
-        
-        while(aux != null) {
-            alumnos[i] = aux;
-            aux = aux.getNext();
-            i++;
-        }
-        return alumnos;
-    }
-    
     public void push (String nombre, String proy, int Dispon, int Costo, String Ubi) {
         Recursos node = new Recursos(nombre, proy, Dispon, Costo, Ubi);
         
@@ -106,5 +93,39 @@ public class Recursos
             node.setNext(aux);
         }
         numNodes ++;
+    }
+    
+    public String traverseStack() {
+        Recursos aux = next;
+        String text = "";
+        
+        if(next == null)
+            text = "La PILA de RECURSOS está vacía.";
+        else {
+            text = "Alumnos registrados:";
+            while (aux != null) {
+                text += "\nNombre: " + aux.getNombre();
+                text += "\nProyecto asignado: " + aux.getProy();
+                text += "\nDisposicion: " + aux.getDispon();
+                text += "\nCosto: " + aux.getCosto();
+                text += "\nUbicacion: " + aux.getUbi();
+                text += "\n----------\n";
+                aux = aux.getNext();
+            }
+        }
+        return text;
+    }
+    
+    public Recursos[] recorrerPila() {
+        Recursos[] alumnos = new Recursos[numNodes];
+        Recursos aux = next;
+        int i = 0;
+        
+        while(aux != null) {
+            alumnos[i] = aux;
+            aux = aux.getNext();
+            i++;
+        }
+        return alumnos;
     }
 }

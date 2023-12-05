@@ -8,11 +8,12 @@ public class frmAddRecursos extends javax.swing.JInternalFrame
 {
 
     private frmMenu menu;
-    Recursos Recurso = new Recursos();
+    Recursos recursos = new Recursos();
     
     public frmAddRecursos()
     {
         initComponents();
+        this.recursos = recursos;
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -100,6 +101,11 @@ public class frmAddRecursos extends javax.swing.JInternalFrame
         jtfCosto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtfCostoActionPerformed(evt);
+            }
+        });
+        jtfCosto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtfCostoKeyTyped(evt);
             }
         });
 
@@ -198,7 +204,27 @@ public class frmAddRecursos extends javax.swing.JInternalFrame
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtfDisKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfDisKeyTyped
-        // TODO add your handling code here:
+        int size = 5;
+        char charac = evt.getKeyChar();
+        
+        if(charac == KeyEvent.VK_ENTER)
+            jbtPush.requestFocus();
+        else
+        {
+            if(!Character.isDigit(charac))
+            {
+                getToolkit().beep();
+                evt.consume();
+                JOptionPane.showMessageDialog(null, "Solo capturar numeros");
+            }
+            
+            if(jtfDis.getText().length() >= size && charac != KeyEvent.VK_ENTER)
+            {
+                getToolkit().beep();
+                evt.consume();
+                JOptionPane.showMessageDialog(null, "Maximo 5 digitos");
+            }
+        }
     }//GEN-LAST:event_jtfDisKeyTyped
 
     private void jbtBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtBackActionPerformed
@@ -210,15 +236,15 @@ public class frmAddRecursos extends javax.swing.JInternalFrame
     }//GEN-LAST:event_jbtPopActionPerformed
 
     private void jbtPushActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtPushActionPerformed
-        String nombre = jtfName.getText();
+    String nombre = jtfName.getText();
     String proy = jtfProy.getText();
     int Dispon = Integer.parseInt(jtfDis.getText());
     int Costo = Integer.parseInt(jtfCosto.getText());
     String Ubi = (String) jcbUbi.getSelectedItem();
     
-    Recurso.push(nombre, proy, Dispon, Costo, Ubi);
+    recursos.push(nombre, proy, Dispon, Costo, Ubi);
     
-    JOptionPane.showMessageDialog(null, "Recurso agregada");
+    JOptionPane.showMessageDialog(null, "Recurso agregado");
         
     limpiarCampos();
     }//GEN-LAST:event_jbtPushActionPerformed
@@ -230,6 +256,30 @@ public class frmAddRecursos extends javax.swing.JInternalFrame
     private void jtfNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtfNameActionPerformed
+
+    private void jtfCostoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfCostoKeyTyped
+        int size = 5;
+        char charac = evt.getKeyChar();
+        
+        if(charac == KeyEvent.VK_ENTER)
+            jbtPush.requestFocus();
+        else
+        {
+            if(!Character.isDigit(charac))
+            {
+                getToolkit().beep();
+                evt.consume();
+                JOptionPane.showMessageDialog(null, "Solo capturar numeros");
+            }
+            
+            if(jtfDis.getText().length() >= size && charac != KeyEvent.VK_ENTER)
+            {
+                getToolkit().beep();
+                evt.consume();
+                JOptionPane.showMessageDialog(null, "Maximo 5 digitos");
+            }
+        }
+    }//GEN-LAST:event_jtfCostoKeyTyped
 
     public void limpiarCampos()
     {

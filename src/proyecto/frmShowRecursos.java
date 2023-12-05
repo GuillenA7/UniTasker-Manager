@@ -4,34 +4,36 @@ import javax.swing.table.DefaultTableModel;
 
 public class frmShowRecursos extends javax.swing.JInternalFrame {
     
-    Recursos recurso = new Recursos();
-    
+    private frmMenu menu;
+    Recursos recursos = new Recursos();
     DefaultTableModel model = new DefaultTableModel();
     
     public frmShowRecursos() {
-    initComponents();
-    
-    String[] header = {"Nombre", "Proyecto", "Disponibilidad", "Ubicacion", "Costo"};
-    model.setColumnIdentifiers(header);
-    
-    Recursos[] recursos = recurso.recorrerPila();
-    
-    Object[] data = new Object[5];
-    
-    for (int i = 0; i < recurso.getNumNodes(); i++) {
-        data[0] = recursos[i].getNombre();
-        data[1] = recursos[i].getProy();
-        data[2] = recursos[i].getDispon();
-        data[3] = recursos[i].getUbi();
-        data[4] = recursos[i].getCosto();
+        initComponents();
+        this.menu = menu;
+        this.recursos = recursos;
         
-        model.addRow(data);
-    }
-    
-    jTable1.setModel(model);
+        String[] header = {"Nombre", "Proyecto", "Disponibilidad", "Ubicacion", "Costo"};
         
-    }
+        model.setColumnIdentifiers(header);
+        
+        Recursos[] recurso = recursos.recorrerPila();
+        
+        Object[] data = new Object[5];
+        
+        for (int i = 0; i < recursos.getNumNodes(); i++) {
+            data[0] = recurso[i].getNombre();
+            data[1] = recurso[i].getProy();
+            data[2] = recurso[i].getDispon();
+            data[3] = recurso[i].getUbi();
+            data[4] = recurso[i].getCosto();
+           
+            
+            model.addRow(data);
+        }
+        jTable1.setModel(model);
     
+    }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
