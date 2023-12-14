@@ -2,24 +2,35 @@ package proyecto;
 
 public class Tareas
 {
-    private String title;
-    private boolean disp;
-    private int pages;
-    private String code;
+    private String nombre;
+    private String descripcion;
+    private String estado;
     private Tareas next;
+    private String diainicio;
+    private String mesinicio;
+    private String diafin;
+    private String mesfin;
+    private String responsable;
 
-    public Tareas(String title, boolean disp, int pages, String code)
+    public Tareas(String nombre, String descripcion, String diainicio, String mesinicio, String diafin, String mesfin, String estado,String responsable)
     {
-        this.title = title;
-        this.disp = disp;
-        this.pages = pages;
-        this.code = code;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.diainicio = diainicio;
+        this.mesinicio = mesinicio;
+        this.diafin = diafin;
+        this.mesfin = mesfin;
+        this.estado = estado;
+        this.responsable = responsable;
         this.next = null;
     }
 
-    public Tareas(String code)
-    {
-        this.code = code;
+    public String getResponsable() {
+        return responsable;
+    }
+
+    public void setResponsable(String responsable) {
+        this.responsable = responsable;
     }
 
     public Tareas()
@@ -27,44 +38,66 @@ public class Tareas
         
     }
 
-    public String getTitle()
+    public String getNombre()
     {
-        return title;
+        return nombre;
     }
 
-    public void setTitle(String title)
+    public void setNombre(String nombre)
     {
-        this.title = title;
+        this.nombre = nombre;
     }
 
-    public boolean isDisp()
+    public String getDescripcion()
     {
-        return disp;
+        return descripcion;
     }
 
-    public void setDisp(boolean disp)
+    public void setDescripcion(String descripcion)
     {
-        this.disp = disp;
+        this.descripcion = descripcion;
     }
 
-    public int getPages()
-    {
-        return pages;
+    public String getDiaInicio() {
+        return diainicio;
     }
 
-    public void setPages(int pages)
-    {
-        this.pages = pages;
+    public void setDiaInicio(String diainicio) {
+        this.diainicio = diainicio;
     }
 
-    public String getCode()
-    {
-        return code;
+    public String getMesinicio() {
+        return mesinicio;
     }
 
-    public void setCode(String code)
+    public void setMesinicio(String mesinicio) {
+        this.mesinicio = mesinicio;
+    }
+
+    public String getDiafin() {
+        return diafin;
+    }
+
+    public void setDiafin(String diafin) {
+        this.diafin = diafin;
+    }
+
+    public String getMesfin() {
+        return mesfin;
+    }
+
+    public void setMesfin(String mesfin) {
+        this.mesfin = mesfin;
+    }
+
+    public String getEstado()
     {
-        this.code = code;
+        return estado;
+    }
+
+    public void setEstado(String estado)
+    {
+        this.estado = estado;
     }
 
     public Tareas getNext()

@@ -7,12 +7,13 @@ import javax.swing.JOptionPane;
 public class frmAddProyectos extends javax.swing.JInternalFrame {
 
     private frmMenu menu;
-    Proyectos Proyect = new Proyectos();
-    
+    private ListaProyectos proyectosLista;
+    private frmShowProyectos frmShowProyectos;   
     
     public frmAddProyectos()
     {
         initComponents();
+        this.proyectosLista = new ListaProyectos();
     }
     
     @SuppressWarnings("unchecked")
@@ -42,8 +43,8 @@ public class frmAddProyectos extends javax.swing.JInternalFrame {
         jlbAdd = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        jrbAct = new javax.swing.JRadioButton();
+        jrbInact = new javax.swing.JRadioButton();
 
         setClosable(true);
         setTitle("Agregar Proyecto");
@@ -129,11 +130,11 @@ public class frmAddProyectos extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Estado del proyecto:");
 
-        jRadioButton1.setText("Activo");
-        jRadioButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jrbAct.setText("Activo");
+        jrbAct.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jRadioButton2.setText("Inactivo");
-        jRadioButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jrbInact.setText("Inactivo");
+        jrbInact.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -182,9 +183,9 @@ public class frmAddProyectos extends javax.swing.JInternalFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(18, 18, 18)
-                                .addComponent(jRadioButton1)
+                                .addComponent(jrbAct)
                                 .addGap(18, 18, 18)
-                                .addComponent(jRadioButton2))
+                                .addComponent(jrbInact))
                             .addComponent(jlbLastname)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jlbAlumnos)
@@ -238,8 +239,8 @@ public class frmAddProyectos extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton2))
+                            .addComponent(jrbAct)
+                            .addComponent(jrbInact))
                         .addGap(31, 31, 31)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jbtPush)
@@ -258,33 +259,27 @@ public class frmAddProyectos extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbtPushActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtPushActionPerformed
-        // Obtener datos de los campos de texto y áreas de texto
         String nombre = jtfName.getText();
         String descripcion = jtaDesc.getText();
-        String fechaInicioDia = (String) jcbDiaInicio.getSelectedItem();
-        String fechaInicioMes = (String) jcbMesInicio.getSelectedItem();
-        String fechaFinDia = (String) jcbDiaFin.getSelectedItem();
-        String fechaFinMes = (String) jcbMesFin.getSelectedItem();
-        boolean estado = true;
-        // Crear una instancia de Proyecto con los datos obtenidos
-        Proyectos Proyect = new Proyectos(nombre, descripcion);
+        String fechaInicioDia = jcbDiaInicio.getSelectedItem().toString();
+        String fechaInicioMes = jcbMesInicio.getSelectedItem().toString();
+        String fechaFinDia = jcbDiaFin.getSelectedItem().toString();
+        String fechaFinMes = jcbMesFin.getSelectedItem().toString();
+        String estado = (jrbAct.isSelected()) ? "Activo" : "Inactivo";
+       if (!nombre.isEmpty() && !descripcion.isEmpty() && (jcbDiaInicio.getSelectedIndex() > 0) && (jcbDiaFin.getSelectedIndex() > 0) 
+           && (jcbMesInicio.getSelectedIndex() > 0) && (jcbMesFin.getSelectedIndex() > 0) && (jrbAct.isSelected() || jrbInact.isSelected())) {
+            proyectosLista.push(nombre, descripcion, fechaInicioDia, fechaInicioMes, fechaFinDia, fechaFinMes, estado);
+            System.out.println("Proyecto agregado correctamente: " + nombre);
+            System.out.println("Contenido de la lista de proyectos después de agregar:");
+            System.out.println(proyectosLista.recorrerProyectos());
+            JOptionPane.showMessageDialog(null, "Proyecto agregado");
 
-        // Manipular las fechas según sea necesario y guardarlas en el objeto Proyecto
-        // Ejemplo: nuevoProyecto.setFechaInicio(fechaInicioDia + "/" + fechaInicioMes);
-        // Ejemplo: nuevoProyecto.setFechaFin(fechaFinDia + "/" + fechaFinMes);
+            // Obtén la instancia de frmShowProyectos y llama al método de actualización
 
-        // Aquí podrías guardar el objeto Proyecto en tu sistema o hacer lo necesario con los datos
-        // Por ejemplo, podrías añadirlo a una lista de proyectos, enviarlo a una base de datos, etc.
-
-        // Ejemplo de cómo mostrar los datos para verificar:
-        JOptionPane.showMessageDialog(null, "Proyecto agregado");
-        // Mostrar las fechas de inicio y fin si las has manipulado y almacenado en el objeto Proyecto
-
-        // Aquí podrías realizar cualquier acción adicional que necesites después de guardar el proyecto
-        // Por ejemplo, cerrar el formulario, actualizar la interfaz, etc.
-
-        // Limpiar los campos del formulario después de agregar el proyecto
-        limpiarCampos();
+        } else {
+            JOptionPane.showMessageDialog(null, "Llena los campos");
+            limpiarCampos();
+        }
     }//GEN-LAST:event_jbtPushActionPerformed
 
     private void jbtPopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtPopActionPerformed
@@ -399,8 +394,6 @@ public class frmAddProyectos extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton jbtBack;
     private javax.swing.JButton jbtPop;
@@ -419,6 +412,8 @@ public class frmAddProyectos extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jlbEntryMonth;
     private javax.swing.JLabel jlbLastname;
     private javax.swing.JLabel jlbName;
+    private javax.swing.JRadioButton jrbAct;
+    private javax.swing.JRadioButton jrbInact;
     private javax.swing.JTextArea jtaDesc;
     private javax.swing.JTextField jtfName;
     // End of variables declaration//GEN-END:variables

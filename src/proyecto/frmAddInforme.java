@@ -5,8 +5,12 @@ import javax.swing.JOptionPane;
 
 public class frmAddInforme extends javax.swing.JInternalFrame {
 
+    private frmMenu menu;
+    private ListaProyectos informesLista;
+    
     public frmAddInforme() {
         initComponents();
+        this.informesLista = new ListaProyectos();
     }
 
     /**
@@ -22,18 +26,18 @@ public class frmAddInforme extends javax.swing.JInternalFrame {
         jTextArea2 = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jtfProyecto = new javax.swing.JTextField();
         jbtPush = new javax.swing.JButton();
         jbtClean = new javax.swing.JButton();
         jbtBack = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        jtfAutor = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jlbAlumnos1 = new javax.swing.JLabel();
         jlbAdd = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
+        jtaInforme = new javax.swing.JTextArea();
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
@@ -48,6 +52,11 @@ public class frmAddInforme extends javax.swing.JInternalFrame {
 
         jbtPush.setText("Guardar");
         jbtPush.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jbtPush.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtPushActionPerformed(evt);
+            }
+        });
 
         jbtClean.setText("Limpiar");
         jbtClean.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -65,9 +74,9 @@ public class frmAddInforme extends javax.swing.JInternalFrame {
             }
         });
 
-        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+        jtfAutor.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextField1KeyTyped(evt);
+                jtfAutorKeyTyped(evt);
             }
         });
 
@@ -83,10 +92,9 @@ public class frmAddInforme extends javax.swing.JInternalFrame {
 
         jLabel4.setText("Informe:");
 
-        jTextArea3.setColumns(20);
-        jTextArea3.setLineWrap(true);
-        jTextArea3.setRows(5);
-        jScrollPane3.setViewportView(jTextArea3);
+        jtaInforme.setColumns(20);
+        jtaInforme.setRows(5);
+        jScrollPane3.setViewportView(jtaInforme);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -112,11 +120,11 @@ public class frmAddInforme extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jtfAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jtfProyecto, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel4)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(23, Short.MAX_VALUE))
@@ -133,14 +141,14 @@ public class frmAddInforme extends javax.swing.JInternalFrame {
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtfAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtfProyecto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -168,7 +176,7 @@ public class frmAddInforme extends javax.swing.JInternalFrame {
         this.dispose();
     }//GEN-LAST:event_jbtBackActionPerformed
 
-    private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
+    private void jtfAutorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfAutorKeyTyped
     char charac = evt.getKeyChar();
 
 if (charac == KeyEvent.VK_ENTER) {
@@ -180,7 +188,25 @@ if (charac == KeyEvent.VK_ENTER) {
         JOptionPane.showMessageDialog(null, "Solo capturar letras");
     }
 }
-    }//GEN-LAST:event_jTextField1KeyTyped
+    }//GEN-LAST:event_jtfAutorKeyTyped
+
+    private void jbtPushActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtPushActionPerformed
+        String autor = jtfAutor.getText();
+        String informe = jtaInforme.getText();
+        String proy = jtfProyecto.getText();
+        if (!autor.isEmpty() && !proy.isEmpty() && !proy.isEmpty()) {
+            informesLista.push(autor, informe, proy);
+            System.out.println("Proyecto agregado correctamente: " + autor);
+            System.out.println("Contenido de la lista de proyectos después de agregar:");
+            System.out.println(informesLista.recorrerInformes());
+            JOptionPane.showMessageDialog(null, "Proyecto agregado");
+
+            // Obtén la instancia de frmShowProyectos y llama al método de actualización
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Llena los campos");
+        }
+    }//GEN-LAST:event_jbtPushActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -192,13 +218,13 @@ if (charac == KeyEvent.VK_ENTER) {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JButton jbtBack;
     private javax.swing.JButton jbtClean;
     private javax.swing.JButton jbtPush;
     private javax.swing.JLabel jlbAdd;
     private javax.swing.JLabel jlbAlumnos1;
+    private javax.swing.JTextArea jtaInforme;
+    private javax.swing.JTextField jtfAutor;
+    private javax.swing.JTextField jtfProyecto;
     // End of variables declaration//GEN-END:variables
 }

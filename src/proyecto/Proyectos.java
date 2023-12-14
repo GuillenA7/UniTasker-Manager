@@ -4,14 +4,14 @@ public class Proyectos
 {
     private String nombre;
     private String descripcion;
-    private boolean estado;
+    private String estado;
     private Proyectos next;
-    private int diainicio;
+    private String diainicio;
     private String mesinicio;
-    private int diafin;
+    private String diafin;
     private String mesfin;
 
-    public Proyectos(String nombre, String descripcion)
+    public Proyectos(String nombre, String descripcion, String diainicio, String mesinicio, String diafin, String mesfin, String estado)
     {
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -48,11 +48,11 @@ public class Proyectos
         this.descripcion = descripcion;
     }
 
-    public int getDiainicio() {
+    public String getDiaInicio() {
         return diainicio;
     }
 
-    public void setDiainicio(int diainicio) {
+    public void setDiaInicio(String diainicio) {
         this.diainicio = diainicio;
     }
 
@@ -64,11 +64,11 @@ public class Proyectos
         this.mesinicio = mesinicio;
     }
 
-    public int getDiafin() {
+    public String getDiafin() {
         return diafin;
     }
 
-    public void setDiafin(int diafin) {
+    public void setDiafin(String diafin) {
         this.diafin = diafin;
     }
 
@@ -80,12 +80,12 @@ public class Proyectos
         this.mesfin = mesfin;
     }
 
-    public boolean isEstado()
+    public String getEstado()
     {
         return estado;
     }
 
-    public void setEstado(boolean estado)
+    public void setEstado(String estado)
     {
         this.estado = estado;
     }
@@ -99,4 +99,5 @@ public class Proyectos
     {
         this.next = next;
     }
+
 }

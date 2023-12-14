@@ -4,13 +4,13 @@ public class Recursos
 {
     private String nombre;
     private String proy;
-    private int Dispon;
-    private int Costo;
+    private String Dispon;
+    private String Costo;
     private String Ubi;
     private Recursos next;
     private int numNodes;
 
-    public Recursos(String nombre, String proy, int Dispon, int Costo, String Ubi)
+    public Recursos(String nombre, String proy, String Dispon, String Costo, String Ubi)
     {
         this.nombre = nombre;
         this.Dispon = Dispon;
@@ -34,11 +34,11 @@ public class Recursos
         this.nombre = nombre;
     }
 
-    public int getDispon() {
+    public String getDispon() {
         return Dispon;
     }
 
-    public void setDispon(int Dispon) {
+    public void setDispon(String Dispon) {
         this.Dispon = Dispon;
     }
 
@@ -58,11 +58,11 @@ public class Recursos
         this.Ubi = Ubi;
     }
 
-    public int getCosto() {
+    public String getCosto() {
         return Costo;
     }
 
-    public void setCosto(int Costo) {
+    public void setCosto(String Costo) {
         this.Costo = Costo;
     }
 
@@ -80,19 +80,6 @@ public class Recursos
 
     public void setNext(Recursos next) {
         this.next = next;
-    }
-    
-    public void push (String nombre, String proy, int Dispon, int Costo, String Ubi) {
-        Recursos node = new Recursos(nombre, proy, Dispon, Costo, Ubi);
-        
-        if(next == null)
-            next = node;
-        else {
-            Recursos aux = next;
-            next = node;
-            node.setNext(aux);
-        }
-        numNodes ++;
     }
     
     public String traverseStack() {
@@ -128,4 +115,5 @@ public class Recursos
         }
         return alumnos;
     }
+    
 }

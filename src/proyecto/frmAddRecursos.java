@@ -8,12 +8,13 @@ public class frmAddRecursos extends javax.swing.JInternalFrame
 {
 
     private frmMenu menu;
+    private ListaProyectos recursosLista;
     Recursos recursos = new Recursos();
     
     public frmAddRecursos()
     {
         initComponents();
-        this.recursos = recursos;
+        this.recursosLista = new ListaProyectos();
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -238,15 +239,22 @@ public class frmAddRecursos extends javax.swing.JInternalFrame
     private void jbtPushActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtPushActionPerformed
     String nombre = jtfName.getText();
     String proy = jtfProy.getText();
-    int Dispon = Integer.parseInt(jtfDis.getText());
-    int Costo = Integer.parseInt(jtfCosto.getText());
+    String Dispon = jtfDis.getText();
+    String Costo = jtfCosto.toString();
     String Ubi = (String) jcbUbi.getSelectedItem();
-    
-    recursos.push(nombre, proy, Dispon, Costo, Ubi);
-    
-    JOptionPane.showMessageDialog(null, "Recurso agregado");
-        
-    limpiarCampos();
+    if (!nombre.isEmpty() && !proy.isEmpty() && !Dispon.isEmpty() && !Costo.isEmpty() && !Ubi.isEmpty()) {
+            recursosLista.push(nombre, proy, Dispon, Costo, Ubi);
+            System.out.println("Proyecto agregado correctamente: " + nombre);
+            System.out.println("Contenido de la lista de proyectos después de agregar:");
+            System.out.println(recursosLista.recorrerRecursos());
+            JOptionPane.showMessageDialog(null, "Proyecto agregado");
+
+            // Obtén la instancia de frmShowProyectos y llama al método de actualización
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Llena los campos");
+            limpiarCampos();
+        }
     }//GEN-LAST:event_jbtPushActionPerformed
 
     private void jtfCostoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfCostoActionPerformed

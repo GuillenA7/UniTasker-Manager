@@ -2,14 +2,22 @@ package proyecto;
 
 public class frmShowProyectos extends javax.swing.JInternalFrame
 {
-
     private frmMenu menu;
-    Recursos prestamoP = new Recursos();
-    
-    public frmShowProyectos()
+    private ListaProyectos proyectos;
+
+   public frmShowProyectos()
     {
         initComponents();
     }
+
+    public frmShowProyectos(ListaProyectos proyectos,frmMenu menu) {
+        initComponents();
+        this.menu = menu;
+        this.proyectos = proyectos;  // Agrega esta línea
+        jtaResultado.setText(this.proyectos.recorrerProyectos());
+        jtaResultado.setEditable(false);
+    }
+
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
